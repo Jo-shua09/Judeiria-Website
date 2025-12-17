@@ -38,6 +38,11 @@ export function Footer() {
                   Services
                 </Link>
               </li>
+              <li>
+                <Link to="/contact" className="text-primary-foreground/80 hover:text-accent transition-colors">
+                  Contact
+                </Link>
+              </li>
             </ul>
           </div>
 
