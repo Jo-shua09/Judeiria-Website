@@ -99,7 +99,7 @@ export function TestimonialsSection() {
                       className="flex flex-col"
                     >
                       <div className="flex items-center gap-4 mb-4">
-                        <img src={testimonial.image} alt={testimonial.name} className="w-12 h-12 rounded-full object-cover" />
+                        <img loading="lazy" src={testimonial.image} alt={testimonial.name} className="w-12 h-12 rounded-full object-cover" />
                         <div>
                           <p className="font-heading font-semibold text-primary">{testimonial.name}</p>
                           <p className="text-muted-foreground text-sm">{testimonial.role}</p>

@@ -20,7 +20,12 @@ export function AboutSection() {
           >
             <div className="relative">
               <div className="absolute -inset-4 bg-primary/10 rounded-2xl transform -rotate-3" />
-              <img src={judePortrait} alt="Jude Iria" className="relative rounded-2xl shadow-xl w-full max-w-md mx-auto object-cover aspect-square" />
+              <img
+                loading="lazy"
+                src={judePortrait}
+                alt="Jude Iria"
+                className="relative rounded-2xl shadow-xl w-full max-w-md mx-auto object-cover aspect-square"
+              />
             </div>
           </motion.div>
 

@@ -10,7 +10,7 @@ export function Footer() {
           {/* Brand */}
           <div className="md:col-span-2">
             <Link to="/" className="flex items-center mb-4">
-              <img src={logoDark} alt="Jude Iria" className="h-12 w-12 rounded-full object-cover" />
+              <img loading="lazy" src={logoDark} alt="Jude Iria" className="h-12 w-12 rounded-full object-cover" />
               <span className="ml-3 font-heading text-xl font-semibold">Jude Iria</span>
             </Link>
             <p className="text-primary-foreground/80 max-w-sm leading-relaxed">

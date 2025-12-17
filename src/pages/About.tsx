@@ -98,6 +98,7 @@ const About = () => {
               <div className="absolute -inset-4 mx-6 md:m-6 bg-accent/20 rounded-2xl transform rotate-2" />
 
               <img
+                loading="lazy"
                 src={judeAbout}
                 alt="Jude Iria"
                 className="relative rounded-2xl shadow-2xl w-full max-w-md mx-auto lg:max-w-none object-cover aspect-square"

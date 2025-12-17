@@ -22,7 +22,7 @@ export function Header() {
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <Link to="/" className="flex items-center">
-            <img src={logoDark} alt="Jude Iria" className="h-12 w-12 rounded-full object-cover" />
+            <img loading="lazy" src={logoDark} alt="Jude Iria" className="h-12 w-12 rounded-full object-cover" />
             <span className="ml-3 font-heading text-xl font-semibold text-primary">Jude Iria</span>
           </Link>
 
