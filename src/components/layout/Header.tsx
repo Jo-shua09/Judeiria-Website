@@ -23,7 +23,7 @@ export function Header() {
           {/* Logo */}
           <Link to="/" className="flex items-center">
             <img loading="lazy" src={logoDark} alt="Jude Iria" className="h-10 w-10 rounded-full object-cover" />
-            <span className="text-2xl font-bold font-mono text-primary ml-1">
+            <span className="text-2xl font-bold font-mono text-primary md:block hidden ml-1">
               Jude
               <span className="text-2xl font-normal font-body">Iria</span>
             </span>

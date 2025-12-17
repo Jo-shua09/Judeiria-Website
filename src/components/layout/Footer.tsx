@@ -13,7 +13,7 @@ export function Footer() {
           <div className="md:col-span-2">
             <Link to="/" className="flex items-center mb-4">
               <img loading="lazy" src={logoDark} alt="Jude Iria" className="h-10 w-10 rounded-full object-cover" />
-              <span className="text-2xl font-bold font-mono text- ml-1">
+              <span className="text-2xl font-bold font-mono ml-1">
                 Jude
                 <span className="text-2xl font-normal font-body">Iria</span>
               </span>
