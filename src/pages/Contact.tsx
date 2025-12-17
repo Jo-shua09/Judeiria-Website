@@ -1,5 +1,6 @@
 import { motion, useInView } from "framer-motion";
-import { useRef } from "react";
+import { useRef, useState } from "react";
+import emailjs from "@emailjs/browser";
 import { Layout } from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -7,30 +8,37 @@ import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Mail, Phone, MapPin, Clock, Send } from "lucide-react";
+import { useToast } from "@/hooks/use-toast";
 
 const contactInfo = [
   {
     icon: Mail,
     title: "Email",
-    details: "jude@judeiria.com",
-    link: "mailto:jude@judeiria.com",
+    details: "ji@judeiria.com",
+    link: "mailto:ji@judeiria.com",
   },
   {
     icon: Phone,
     title: "Phone",
-    details: "+1 (555) 123-4567",
-    link: "tel:+15551234567",
+    details: "+234 903 524 0907",
+    link: "tel:+2349035240907",
+  },
+  {
+    icon: Phone,
+    title: "Phone (UK)",
+    details: "+44 7490 694776",
+    link: "tel:+447490694776",
   },
   {
     icon: MapPin,
     title: "Location",
-    details: "San Francisco, CA",
+    details: "Available globally, based in Nigeria.",
     link: "#",
   },
   {
     icon: Clock,
     title: "Business Hours",
-    details: "Mon-Fri: 9AM-6PM PST",
+    details: "Mon-Fri: Flexible Hours",
     link: "#",
   },
 ];
@@ -53,6 +61,41 @@ function Section({ children, className = "" }: { children: React.ReactNode; clas
 }
 
 const Contact = () => {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const { toast } = useToast();
+  const formRef = useRef<HTMLFormElement>(null);
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+
+    try {
+      await emailjs.sendForm(
+        "service_9fqzjgd", // Replace with your EmailJS service ID
+        "template_cqkzkga", // Replace with your EmailJS template ID
+        formRef.current!,
+        "WybMtnQuS2IE8YfuR"
+      );
+
+      toast({
+        title: "Message sent successfully!",
+        description: "Thank you for your message. I'll get back to you within 24 hours.",
+        variant: "default",
+      });
+
+      // Reset form
+      formRef.current?.reset();
+    } catch (error) {
+      console.error("EmailJS error:", error);
+      toast({
+        title: "Failed to send message",
+        description: "Please try again or contact me directly via email.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
   return (
     <Layout>
       {/* Hero */}
@@ -68,7 +111,7 @@ const Contact = () => {
       </section>
 
       {/* Contact Form & Info */}
-      <Section className="px-6 py-12 bg-background">
+      <Section className="px-3 md:px-6 py-12 bg-background">
         <div className="container-wide mx-auto">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-20">
             {/* Contact Form */}
@@ -79,32 +122,40 @@ const Contact = () => {
                   <p className="text-muted-foreground">Fill out the form below and I'll get back to you within 24 hours.</p>
                 </CardHeader>
                 <CardContent className="space-y-6">
-                  <div className="grid sm:grid-cols-2 gap-4">
-                    <div className="space-y-2">
-                      <Label htmlFor="firstName">First Name</Label>
-                      <Input id="firstName" placeholder="John" />
+                  <form ref={formRef} onSubmit={handleSubmit} className="space-y-6">
+                    <div className="grid sm:grid-cols-2 gap-4">
+                      <div className="space-y-2">
+                        <Label htmlFor="firstName">First Name</Label>
+                        <Input id="firstName" name="firstName" placeholder="John" required />
+                      </div>
+                      <div className="space-y-2">
+                        <Label htmlFor="lastName">Last Name</Label>
+                        <Input id="lastName" name="lastName" placeholder="Doe" required />
+                      </div>
                     </div>
                     <div className="space-y-2">
-                      <Label htmlFor="lastName">Last Name</Label>
-                      <Input id="lastName" placeholder="Doe" />
+                      <Label htmlFor="email">Email</Label>
+                      <Input id="email" name="email" type="email" placeholder="john@example.com" required />
                     </div>
-                  </div>
-                  <div className="space-y-2">
-                    <Label htmlFor="email">Email</Label>
-                    <Input id="email" type="email" placeholder="john@example.com" />
-                  </div>
-                  <div className="space-y-2">
-                    <Label htmlFor="subject">Subject</Label>
-                    <Input id="subject" placeholder="How can I help you?" />
-                  </div>
-                  <div className="space-y-2">
-                    <Label htmlFor="message">Message</Label>
-                    <Textarea id="message" placeholder="Tell me about your goals, challenges, or what you're looking to achieve..." rows={6} />
-                  </div>
-                  <Button className="w-full group" size="lg">
-                    Send Message
-                    <Send className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                  </Button>
+                    <div className="space-y-2">
+                      <Label htmlFor="subject">Subject</Label>
+                      <Input id="subject" name="subject" placeholder="How can I help you?" required />
+                    </div>
+                    <div className="space-y-2">
+                      <Label htmlFor="message">Message</Label>
+                      <Textarea
+                        id="message"
+                        name="message"
+                        placeholder="Tell me about your goals, challenges, or what you're looking to achieve..."
+                        rows={6}
+                        required
+                      />
+                    </div>
+                    <Button type="submit" className="w-full group" size="lg" disabled={isSubmitting}>
+                      {isSubmitting ? "Sending..." : "Send Message"}
+                      <Send className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                    </Button>
+                  </form>
                 </CardContent>
               </Card>
             </motion.div>
@@ -158,15 +209,20 @@ const Contact = () => {
           <div className="text-center mb-8">
             <h2 className="font-heading text-3xl md:text-4xl font-bold text-primary mb-4">Find Me</h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
-              Based in San Francisco, I work with clients globally. Virtual consultations are available worldwide.
+              Based in Nigeria, I work with clients globally. Virtual consultations are available worldwide.
             </p>
           </div>
-          <div className="bg-muted rounded-lg h-96 flex items-center justify-center">
-            <div className="text-center">
-              <MapPin className="w-12 h-12 text-muted-foreground mx-auto mb-4" />
-              <p className="text-muted-foreground">Interactive map would be embedded here</p>
-              <p className="text-sm text-muted-foreground mt-2">San Francisco, CA</p>
-            </div>
+          <div className="bg-muted rounded-lg h-96 overflow-hidden">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3964.0!2d3.3792!3d6.5244!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x103b8b2ae68280c1%3A0xdc9e87a367c3d9!2sLagos%2C%20Nigeria!5e0!3m2!1sen!2s!4v1234567890!5m2!1sen!2s"
+              width="100%"
+              height="100%"
+              style={{ border: 0 }}
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              title="Map of Lagos, Nigeria"
+            ></iframe>
           </div>
         </div>
       </Section>
