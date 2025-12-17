@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { Linkedin, Twitter, Instagram } from "lucide-react";
-import logoDark from "@/assets/logo-dark.jpg";
+import logoDark from "@/assets/logoo-dark.png";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 
@@ -12,8 +12,11 @@ export function Footer() {
           {/* Brand */}
           <div className="md:col-span-2">
             <Link to="/" className="flex items-center mb-4">
-              <img loading="lazy" src={logoDark} alt="Jude Iria" className="h-12 w-12 rounded-full object-cover" />
-              <span className="ml-3 font-heading text-xl font-semibold">Jude Iria</span>
+              <img loading="lazy" src={logoDark} alt="Jude Iria" className="h-10 w-10 rounded-full object-cover" />
+              <span className="text-2xl font-bold font-mono text- ml-1">
+                Jude
+                <span className="text-2xl font-normal font-body">Iria</span>
+              </span>
             </Link>
             <p className="text-primary-foreground/80 max-w-sm leading-relaxed">
               Business Consultant, Career Coach, and Brand & Growth Strategist helping people turn skills into income and confusion into clear
