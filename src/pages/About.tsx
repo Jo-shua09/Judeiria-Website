@@ -103,6 +103,9 @@ function Section({ children, className = "" }: { children: React.ReactNode; clas
 }
 
 const About = () => {
+  const experienceRef = useRef(null);
+  const experienceIsInView = useInView(experienceRef, { once: true, margin: "-100px" });
+
   return (
     <Layout>
       {/* Hero */}
@@ -217,22 +220,34 @@ const About = () => {
       </Section>
 
       {/* Experience & Perspective */}
-      <Section className="px-6 py-12 bg-primary text-primary-foreground">
+      <motion.section
+        ref={experienceRef}
+        initial={{ opacity: 0, y: 30 }}
+        animate={experienceIsInView ? { opacity: 1, y: 0 } : {}}
+        transition={{ duration: 0.6 }}
+        className="px-6 py-12 bg-primary text-primary-foreground"
+      >
         <div className="container-wide mx-auto">
           <h2 className="font-heading text-3xl md:text-4xl font-bold mb-12 text-center">Experience & Perspective</h2>
           <div className="grid md:grid-cols-3 gap-8 mb-12">
-            {stats.map((stat) => (
-              <div key={stat.label} className="text-center p-8 bg-primary-foreground/5 rounded-xl border border-primary-foreground/10">
-                <span className="font-heading text-4xl md:text-5xl font-bold text-accent">{stat.value}</span>
+            {stats.map((stat, i) => (
+              <motion.div
+                key={stat.label}
+                initial={{ opacity: 0, y: 30 }}
+                animate={experienceIsInView ? { opacity: 1, y: 0 } : {}}
+                transition={{ duration: 0.6, delay: 0.2 + i * 0.15 }}
+                className="text-center p-8 bg-primary-foreground/5 rounded-xl border border-primary-foreground/10"
+              >
+                <AnimatedCounter value={stat.value} prefix={stat.prefix} suffix={stat.suffix} isInView={experienceIsInView} />
                 <p className="text-secondary mt-4">{stat.label}</p>
-              </div>
+              </motion.div>
             ))}
           </div>
           <p className="text-center text-primary-foreground/80 max-w-3xl mx-auto leading-relaxed">
             This mix of hands-on building and strategic advising gives me a practical lens. I don't just suggest ideas I help implement what works.
           </p>
         </div>
-      </Section>
+      </motion.section>
 
       {/* What I Believe */}
       <Section className="px-6 py-12 bg-background">
