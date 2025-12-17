@@ -16,7 +16,7 @@ export function AboutSection() {
             initial={{ opacity: 0, x: -50 }}
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.8 }}
-            className="md:flex-1"
+            className="md:flex-1 md:px-0 px-8"
           >
             <div className="relative">
               <div className="absolute -inset-4 bg-primary/10 rounded-2xl transform -rotate-3" />
