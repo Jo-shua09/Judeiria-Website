@@ -75,7 +75,7 @@ export function HeroSection() {
                 <motion.div className="flex gap-4" animate={{ x: ["0%", "-50%"] }} transition={{ duration: 20, ease: "linear", repeat: Infinity }}>
                   {[...flagImages, ...flagImages].map((image, i) => (
                     <a key={i} href={flagLinks[i % flagImages.length]} target="_blank" rel="noopener noreferrer" className="flex-shrink-0">
-                      <img loading="lazy" src={image} alt={`Flag ${(i % flagImages.length) + 1}`} loading="lazy" className="h-8 w-auto rounded" />
+                      <img loading="lazy" src={image} alt={`Flag ${(i % flagImages.length) + 1}`} className="h-8 w-auto rounded" />
                     </a>
                   ))}
                 </motion.div>
