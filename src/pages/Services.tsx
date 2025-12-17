@@ -61,13 +61,14 @@ function ServiceSection({ id, icon, title, description, includes, outcomes, ctaT
                 ))}
               </ul>
             </div>
-
-            <Button variant="hero" size="lg" asChild className="group">
-              <a href={ctaLink} target="_blank" rel="noopener noreferrer">
-                {ctaText}
-                <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
-              </a>
-            </Button>
+            <div className="w-full">
+              <Button variant="hero" size="lg" asChild className="group w-full">
+                <a href={ctaLink} target="_blank" rel="noopener noreferrer">
+                  {ctaText}
+                  <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                </a>
+              </Button>
+            </div>
           </div>
         </div>
       </div>
