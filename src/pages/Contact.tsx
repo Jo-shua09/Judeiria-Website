@@ -96,6 +96,7 @@ const Contact = () => {
       setIsSubmitting(false);
     }
   };
+
   return (
     <Layout>
       {/* Hero */}
