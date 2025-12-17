@@ -93,9 +93,9 @@ const About = () => {
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 0.3, duration: 0.8 }}
-              className="order-2 lg:order-1 relative md:px-12 my-12 md:pb-0 pb-6 lg:flex-1 px-8"
+              className="order-2 lg:order-1 relative md:px-12 my-12 md:pb-0 pb-6 lg:flex-1 px-3"
             >
-              <div className="absolute -inset-4 mx-10 md:m-6 bg-accent/20 rounded-2xl transform rotate-2" />
+              <div className="absolute -inset-4 mx-6 md:m-6 bg-accent/20 rounded-2xl transform rotate-2" />
 
               <img
                 src={judeAbout}
