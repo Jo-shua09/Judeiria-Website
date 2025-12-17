@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import judeHero from "@/assets/jude-hero.jpg";
+import judeHero from "@/assets/jude-portrait.jpg";
 
 const flagLinks = [
   "https://en.wikipedia.org/wiki/Flag_of_the_United_States",
@@ -38,7 +38,7 @@ export function HeroSection() {
         />
       </div>
 
-      <div className="px-6 mx-auto">
+      <div className="px-6 md:px-12 mx-auto">
         <div className="flex lg:flex-nowrap justify-center md:py-16 py-0 flex-wrap gap-16 lg:gap-20 items-center">
           {/* Content */}
           <motion.div
@@ -60,7 +60,7 @@ export function HeroSection() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4, duration: 0.6 }}
-              className="text-lg md:text-xl text-muted-foreground mb-6 leading-relaxed"
+              className="text-lg md:text-xl text-primary mb-6 leading-relaxed"
             >
               I'm <span className="text-primary font-semibold">Jude Iria</span>, a Business Consultant, Career Coach, and Brand & Growth Strategist
               helping people turn skills into income, brands into businesses, and confusion into clear direction.
@@ -68,9 +68,7 @@ export function HeroSection() {
 
             {/* Credibility Line */}
             <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.6, duration: 0.6 }} className="mb-8">
-              <p className="text-sm text-muted-foreground mb-3">
-                Founder of multiple ventures • Worked with founders, professionals, and brands across:
-              </p>
+              <p className="text-sm text-primary mb-3">Founder of multiple ventures • Worked with founders, professionals, and brands across:</p>
               <div className="overflow-hidden">
                 <motion.div className="flex gap-4" animate={{ x: ["0%", "-50%"] }} transition={{ duration: 20, ease: "linear", repeat: Infinity }}>
                   {[...flagImages, ...flagImages].map((image, i) => (

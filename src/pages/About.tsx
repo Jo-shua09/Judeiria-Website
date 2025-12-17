@@ -1,5 +1,5 @@
 import { motion, useInView } from "framer-motion";
-import { useRef } from "react";
+import { useRef, useEffect, useState } from "react";
 import { Layout } from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
@@ -7,9 +7,9 @@ import { ArrowRight } from "lucide-react";
 import judeAbout from "@/assets/jude-about.jpg";
 
 const stats = [
-  { value: "100+", label: "Brands & businesses supported" },
-  { value: "95%", label: "Client satisfaction rate" },
-  { value: "$100k+", label: "Revenue scaled for founders" },
+  { value: 100, suffix: "+", label: "Brands & businesses supported" },
+  { value: 95, suffix: "%", label: "Client satisfaction rate" },
+  { value: 100, prefix: "$", suffix: "k+", label: "Revenue scaled for founders" },
 ];
 
 const beliefs = [
@@ -51,6 +51,40 @@ const faqs = [
   },
 ];
 
+function AnimatedCounter({ value, prefix = "", suffix = "", isInView }: { value: number; prefix?: string; suffix?: string; isInView: boolean }) {
+  const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    if (!isInView) return;
+
+    const duration = 2000;
+    const steps = 60;
+    const stepDuration = duration / steps;
+    const increment = value / steps;
+    let current = 0;
+
+    const timer = setInterval(() => {
+      current += increment;
+      if (current >= value) {
+        setCount(value);
+        clearInterval(timer);
+      } else {
+        setCount(Math.floor(current));
+      }
+    }, stepDuration);
+
+    return () => clearInterval(timer);
+  }, [isInView, value]);
+
+  return (
+    <span className="font-heading text-4xl md:text-5xl font-bold text-accent">
+      {prefix}
+      {count}
+      {suffix}
+    </span>
+  );
+}
+
 function Section({ children, className = "" }: { children: React.ReactNode; className?: string }) {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
@@ -72,17 +106,17 @@ const About = () => {
   return (
     <Layout>
       {/* Hero */}
-      <section className="px-6 md:pt-0 pt-8 bg-secondary">
+      <section className="px-6 md:px-12 md:pt-0 pt-8 bg-secondary">
         <div className="mx-auto">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
             <motion.div initial={{ opacity: 0, x: -50 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.8 }}>
               <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold text-primary mb-6">Who I Am</h1>
-              <p className="text-xl text-muted-foreground mb-6 leading-relaxed">
+              <p className="text-xl text-primary mb-6 leading-relaxed">
                 I'm <span className="text-primary font-semibold">Jude Iria</span>, a founder, business consultant, career coach, and brand strategist.
               </p>
-              <p className="text-lg text-muted-foreground leading-relaxed">
+              <p className="text-lg text-primary leading-relaxed">
                 At my core, I help people make sense of growth. Over the years, I've worked with founders, professionals, and personal brands who were
-                talented, driven, and ambitious—but stuck. Not because they lacked ability, but because they lacked clarity, structure, and direction.
+                talented, driven, and ambitious but stuck. Not because they lacked ability, but because they lacked clarity, structure, and direction.
               </p>
               <p className="text-lg text-primary font-medium mt-6">
                 My work is about simplifying that journey and helping people build with intention.
@@ -101,7 +135,7 @@ const About = () => {
                 loading="lazy"
                 src={judeAbout}
                 alt="Jude Iria"
-                className="relative rounded-2xl shadow-2xl w-full max-w-md mx-auto lg:max-w-none object-cover aspect-square"
+                className="relative rounded-2xl shadow-2xl w-full max-w-md mx-auto lg:max-w-none object-cover aspect-[1/1]"
               />
             </motion.div>
           </div>
@@ -112,9 +146,9 @@ const About = () => {
       <Section className="px-6 py-12 bg-background">
         <div className="container-narrow mx-auto">
           <h2 className="font-heading text-3xl md:text-4xl font-bold text-primary mb-8">How My Work Started</h2>
-          <div className="space-y-6 text-muted-foreground leading-relaxed">
+          <div className="space-y-6 text-primary leading-relaxed">
             <p>I didn't start out trying to "do everything."</p>
-            <p>I started by solving problems—first for myself, then for others.</p>
+            <p>I started by solving problems first for myself, then for others.</p>
             <p>
               As I built businesses, worked across different teams, and supported people at different stages of growth, one pattern kept showing up:
             </p>
@@ -136,8 +170,8 @@ const About = () => {
       <Section className="px-6 py-12 bg-secondary">
         <div className="container-narrow mx-auto">
           <h2 className="font-heading text-3xl md:text-4xl font-bold text-primary mb-8">What I'm Known For</h2>
-          <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
-            I'm known for helping people gain clarity and build structure—whether they're starting from scratch or trying to scale.
+          <p className="text-lg text-primary mb-8 leading-relaxed">
+            I'm known for helping people gain clarity and build structure whether they're starting from scratch or trying to scale.
           </p>
           <div className="grid md:grid-cols-2 gap-4">
             {[
@@ -149,7 +183,7 @@ const About = () => {
             ].map((item, i) => (
               <div key={i} className="flex items-start gap-3 p-4 bg-card rounded-lg border border-border">
                 <span className="text-accent mt-1">•</span>
-                <span className="text-muted-foreground">{item}</span>
+                <span className="text-primary">{item}</span>
               </div>
             ))}
           </div>
@@ -163,7 +197,7 @@ const About = () => {
       <Section className="px-6 py-12 bg-background">
         <div className="container-narrow mx-auto">
           <h2 className="font-heading text-3xl md:text-4xl font-bold text-primary mb-8">The Way I Work</h2>
-          <div className="space-y-6 text-muted-foreground leading-relaxed">
+          <div className="space-y-6 text-primary leading-relaxed">
             <p>I don't approach people with assumptions or templates.</p>
             <p>I take time to understand:</p>
             <div className="grid sm:grid-cols-2 gap-4 my-8">
@@ -190,12 +224,12 @@ const About = () => {
             {stats.map((stat) => (
               <div key={stat.label} className="text-center p-8 bg-primary-foreground/5 rounded-xl border border-primary-foreground/10">
                 <span className="font-heading text-4xl md:text-5xl font-bold text-accent">{stat.value}</span>
-                <p className="text-primary-foreground/80 mt-4">{stat.label}</p>
+                <p className="text-secondary mt-4">{stat.label}</p>
               </div>
             ))}
           </div>
           <p className="text-center text-primary-foreground/80 max-w-3xl mx-auto leading-relaxed">
-            This mix of hands-on building and strategic advising gives me a practical lens. I don't just suggest ideas—I help implement what works.
+            This mix of hands-on building and strategic advising gives me a practical lens. I don't just suggest ideas I help implement what works.
           </p>
         </div>
       </Section>
@@ -218,7 +252,7 @@ const About = () => {
               </div>
             ))}
           </div>
-          <p className="text-muted-foreground mt-8 leading-relaxed">These beliefs shape how I work and who I work with.</p>
+          <p className="text-primary mt-8 leading-relaxed">These beliefs shape how I work and who I work with.</p>
         </div>
       </Section>
 
@@ -238,7 +272,7 @@ const About = () => {
               </div>
             ))}
           </div>
-          <p className="text-muted-foreground mt-8 leading-relaxed text-center">
+          <p className="text-primary mt-8 leading-relaxed text-center">
             Some are just starting. Some are already established.
             <br />
             <span className="text-primary font-semibold">All are ready for clarity.</span>
@@ -254,7 +288,7 @@ const About = () => {
             {faqs.map((faq, i) => (
               <AccordionItem key={i} value={`item-${i}`} className="bg-card border border-border rounded-lg px-6">
                 <AccordionTrigger className="text-left font-heading font-semibold text-primary hover:text-accent">{faq.question}</AccordionTrigger>
-                <AccordionContent className="text-muted-foreground leading-relaxed">{faq.answer}</AccordionContent>
+                <AccordionContent className="text-primary leading-relaxed">{faq.answer}</AccordionContent>
               </AccordionItem>
             ))}
           </Accordion>
@@ -262,13 +296,13 @@ const About = () => {
       </Section>
 
       {/* CTA */}
-      <section className="px-6 py-12 bg-primary text-primary-foreground">
+      <section className="px-6 py-12 bg-secondary  text-primary">
         <div className="container-narrow mx-auto text-center">
           <h2 className="font-heading text-3xl md:text-4xl font-bold mb-6">Let's Work Together</h2>
-          <p className="text-lg text-primary-foreground/80 mb-8 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-lg text-primary mb-8 max-w-2xl mx-auto leading-relaxed">
             If you're feeling stuck, overwhelmed, or unsure of your next step, you don't need more noise. You need clarity.
           </p>
-          <p className="text-primary-foreground/80 mb-10">
+          <p className="text-primary mb-10">
             If my work resonates with you, you're welcome to reach out. We'll start with a clarity call and take it from there.
           </p>
           <Button variant="hero" size="xl" asChild className="group">

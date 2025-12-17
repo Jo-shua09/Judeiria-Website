@@ -69,7 +69,7 @@ export function TestimonialsSection() {
   const prev = () => setCurrent((c) => (c - 1 < 0 ? maxIndex : c - 1));
 
   return (
-    <section ref={ref} className="section-padding bg-background">
+    <section ref={ref} className="px-6 py-12 bg-background">
       <div className="container-narrow mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 30 }}

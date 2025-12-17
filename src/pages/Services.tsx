@@ -27,30 +27,24 @@ function ServiceSection({ id, icon, title, description, includes, outcomes, ctaT
       initial={{ opacity: 0, y: 50 }}
       animate={isInView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.6 }}
-      className={`px-6 py-16 ${reverse ? "bg-secondary" : "bg-background"}`}
+      className={`px-6 md:px-12 py-16 ${reverse ? "bg-secondary" : "bg-background"}`}
     >
       <div className="container-wide mx-auto">
         <div className={`grid lg:grid-cols-2 gap-12 lg:gap-20 items-start ${reverse ? "lg:flex-row-reverse" : ""}`}>
           <div className={reverse ? "lg:order-2" : ""}>
             <div className="w-16 h-16 bg-accent/10 rounded-2xl flex items-center justify-center mb-6">{icon}</div>
             <h2 className="font-heading text-3xl md:text-4xl font-bold text-primary mb-6">{title}</h2>
-            <p className="text-lg text-muted-foreground leading-relaxed mb-8">{description}</p>
-            <Button variant="hero" size="lg" asChild className="group">
-              <a href={ctaLink} target="_blank" rel="noopener noreferrer">
-                {ctaText}
-                <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
-              </a>
-            </Button>
+            <p className="text-lg text-primary leading-relaxed">{description}</p>
           </div>
 
-          <div className={`space-y-8 ${reverse ? "lg:order-1" : ""}`}>
+          <div className={`space-y-6 ${reverse ? "lg:order-1" : ""}`}>
             <div className="bg-card rounded-xl border border-border p-8">
               <h3 className="font-heading text-xl font-semibold text-primary mb-6">What this includes:</h3>
               <ul className="space-y-4">
                 {includes.map((item, i) => (
                   <li key={i} className="flex items-start gap-3">
                     <Check className="w-5 h-5 text-accent mt-0.5 flex-shrink-0" />
-                    <span className="text-muted-foreground">{item}</span>
+                    <span className="text-primary">{item}</span>
                   </li>
                 ))}
               </ul>
@@ -67,6 +61,13 @@ function ServiceSection({ id, icon, title, description, includes, outcomes, ctaT
                 ))}
               </ul>
             </div>
+
+            <Button variant="hero" size="lg" asChild className="group">
+              <a href={ctaLink} target="_blank" rel="noopener noreferrer">
+                {ctaText}
+                <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              </a>
+            </Button>
           </div>
         </div>
       </div>
@@ -80,13 +81,13 @@ const services = [
     icon: <Briefcase className="w-8 h-8 text-accent" />,
     title: "Business Consulting",
     description:
-      "Building a business isn't just about effort. At some point, you need perspective—someone who can look at what you're doing, ask the right questions, and help you see things clearly. I work with you to understand your idea or existing business, simplify it, and give it proper direction so your time and energy are spent where they actually count.",
+      "Building a business isn't just about effort. At some point, you need perspective someone who can look at what you're doing, ask the right questions, and help you see things clearly. I work with you to understand your idea or existing business, simplify it, and give it proper direction so your time and energy are spent where they actually count.",
     includes: [
       "Reviewing your business or idea from a fresh, objective angle",
       "Clarifying what you offer and who it's really for",
       "Structuring your business in a simple, workable way",
       "Turning a personal brand into a clear business direction",
-      "Helping you decide what to focus on now — and what can wait",
+      "Helping you decide what to focus on now   and what can wait",
     ],
     outcomes: ["Clear direction for your business", "Better structure and systems", "Confidence in your next move"],
     ctaText: "Book a Business Consulting Session",
@@ -97,7 +98,7 @@ const services = [
     icon: <Compass className="w-8 h-8 text-accent" />,
     title: "Career Coaching",
     description:
-      "Many people are capable, talented, and hardworking—but unsure where to focus their energy. Career coaching with me is about helping you understand yourself better, make clearer choices, and position yourself for real opportunities. We don't guess. We get clear.",
+      "Many people are capable, talented, and hardworking but unsure where to focus their energy. Career coaching with me is about helping you understand yourself better, make clearer choices, and position yourself for real opportunities. We don't guess. We get clear.",
     includes: [
       "Identifying your strongest and most practical skills",
       "Clarifying a career or skill path that fits you",
@@ -115,7 +116,7 @@ const services = [
     icon: <Megaphone className="w-8 h-8 text-accent" />,
     title: "Brand & Social Strategy",
     description:
-      "Your online presence should make things easier for you—not confuse people. If someone visits your profile and still doesn't understand what you do, who you help, or why they should take you seriously, opportunities get missed. I help fix that.",
+      "Your online presence should make things easier for you not confuse people. If someone visits your profile and still doesn't understand what you do, who you help, or why they should take you seriously, opportunities get missed. I help fix that.",
     includes: [
       "Personal brand positioning and focus",
       "Clarifying your message and online identity",
@@ -136,7 +137,7 @@ const Services = () => {
   return (
     <Layout>
       {/* Hero */}
-      <section ref={heroRef} className="px-6 py-12 bg-primary text-primary-foreground">
+      <section ref={heroRef} className="px-6 md:px-12 py-12 bg-primary text-primary-foreground">
         <div className="container-narrow mx-auto text-center">
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
@@ -172,7 +173,7 @@ const Services = () => {
       ))}
 
       {/* Not Sure CTA */}
-      <section className="px-6 py-12 bg-secondary">
+      <section className="px-6 md:px-12 py-12 bg-secondary">
         <div className="container-narrow mx-auto text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -181,9 +182,9 @@ const Services = () => {
             transition={{ duration: 0.6 }}
           >
             <h2 className="font-heading text-3xl md:text-4xl font-bold text-primary mb-6">Not Sure What You Need Yet?</h2>
-            <p className="text-lg text-muted-foreground mb-4 leading-relaxed">That's completely normal.</p>
-            <p className="text-muted-foreground mb-10 max-w-2xl mx-auto leading-relaxed">
-              Most people don't come in knowing whether they need consulting, coaching, or brand strategy—they just know something feels off or
+            <p className="text-lg text-primary mb-4 leading-relaxed">That's completely normal.</p>
+            <p className="text-primary mb-10 max-w-2xl mx-auto leading-relaxed">
+              Most people don't come in knowing whether they need consulting, coaching, or brand strategy they just know something feels off or
               unclear. We'll figure it out together.
             </p>
             <Button variant="cta" size="xl" asChild className="group">

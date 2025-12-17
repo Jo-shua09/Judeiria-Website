@@ -1,12 +1,14 @@
 import { Link } from "react-router-dom";
 import { Linkedin, Twitter, Instagram } from "lucide-react";
 import logoDark from "@/assets/logo-dark.jpg";
+import { Input } from "@/components/ui/input";
+import { Button } from "@/components/ui/button";
 
 export function Footer() {
   return (
     <footer className="bg-primary text-primary-foreground">
-      <div className="mx-auto px-6 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
+      <div className="mx-auto px-6 md:px-12 py-12">
+        <div className="grid grid-cols-1 md:grid-cols-4 lg:grid-cols-6 gap-12">
           {/* Brand */}
           <div className="md:col-span-2">
             <Link to="/" className="flex items-center mb-4">
@@ -49,7 +51,7 @@ export function Footer() {
           {/* Connect */}
           <div>
             <h4 className="font-heading text-lg font-semibold mb-4">Connect</h4>
-            <div className="grid grid-cols-5 md:grid-cols-4 w-fit gap-4">
+            <div className="grid grid-cols-5 md:grid-cols-3 w-fit gap-4">
               <a
                 href="https://linkedin.com/in/jude-iria"
                 target="_blank"
@@ -110,6 +112,17 @@ export function Footer() {
                   <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
                 </svg>
               </a>
+            </div>
+          </div>
+
+          {/* Newsletter */}
+          <div className="md:col-span-2">
+            <h4 className="font-heading text-lg font-semibold mb-4">Subscribe to our Newsletter</h4>
+            <div className="flex flex-col space-y-2">
+              <Input type="email" placeholder="Enter your email" className="w-full text-primary-foreground font-medium" />
+              <Button variant="hero" size="lg">
+                Subscribe
+              </Button>
             </div>
           </div>
         </div>
