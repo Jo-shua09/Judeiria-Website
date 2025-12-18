@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 
 export function Footer() {
   return (
-    <footer className="bg-primary text-primary-foreground">
+    <footer className="bg-primary  text-white-foreground">
       <div className="mx-auto px-6 md:px-12 py-12">
         <div className="grid grid-cols-1 md:grid-cols-4 lg:grid-cols-6 gap-12">
           {/* Brand */}
@@ -18,7 +18,7 @@ export function Footer() {
                 <span className="text-2xl font-normal font-body">Iria</span>
               </span>
             </Link>
-            <p className="text-primary-foreground/80 max-w-sm leading-relaxed">
+            <p className=" text-white-foreground/80 max-w-sm leading-relaxed">
               Business Consultant, Career Coach, and Brand & Growth Strategist helping people turn skills into income and confusion into clear
               direction.
             </p>
@@ -29,22 +29,22 @@ export function Footer() {
             <h4 className="font-heading text-lg font-semibold mb-4">Quick Links</h4>
             <ul className="space-y-3">
               <li>
-                <Link to="/" className="text-primary-foreground/80 hover:text-accent transition-colors">
+                <Link to="/" className=" text-white-foreground/80 hover:text-accent transition-colors">
                   Home
                 </Link>
               </li>
               <li>
-                <Link to="/about" className="text-primary-foreground/80 hover:text-accent transition-colors">
+                <Link to="/about" className=" text-white-foreground/80 hover:text-accent transition-colors">
                   About
                 </Link>
               </li>
               <li>
-                <Link to="/services" className="text-primary-foreground/80 hover:text-accent transition-colors">
+                <Link to="/services" className=" text-white-foreground/80 hover:text-accent transition-colors">
                   Services
                 </Link>
               </li>
               <li>
-                <Link to="/contact" className="text-primary-foreground/80 hover:text-accent transition-colors">
+                <Link to="/contact" className=" text-white-foreground/80 hover:text-accent transition-colors">
                   Contact
                 </Link>
               </li>
@@ -54,7 +54,7 @@ export function Footer() {
           {/* Connect */}
           <div>
             <h4 className="font-heading text-lg font-semibold mb-4">Connect</h4>
-            <div className="grid grid-cols-5 md:grid-cols-3 w-fit gap-4">
+            <div className="grid grid-cols-4 md:grid-cols-3 w-fit gap-4">
               <a
                 href="https://linkedin.com/in/jude-iria"
                 target="_blank"
@@ -122,7 +122,7 @@ export function Footer() {
           <div className="md:col-span-2">
             <h4 className="font-heading text-lg font-semibold mb-4">Subscribe to our Newsletter</h4>
             <div className="flex flex-col space-y-2">
-              <Input type="email" placeholder="Enter your email" className="w-full text-primary-foreground font-medium" />
+              <Input type="email" placeholder="Enter your email" className="w-full border-2 text-white-foreground font-medium" />
               <Button variant="hero" size="lg">
                 Subscribe
               </Button>
@@ -130,7 +130,7 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="border-t border-primary-foreground/20 mt-12 pt-8 text-center text-primary-foreground/60 text-sm">
+        <div className="border-t border-primary-foreground/20 mt-12 pt-8 text-center  text-white-foreground/60 text-sm">
           <p>© {new Date().getFullYear()} Jude Iria. All rights reserved.</p>
         </div>
       </div>

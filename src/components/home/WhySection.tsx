@@ -8,7 +8,7 @@ export function WhySection() {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section ref={ref} className="py-12 px-6 bg-primary text-primary-foreground">
+    <section ref={ref} className="py-12 px-6 bg-primary  text-white-foreground">
       <div className="container-narrow mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -25,9 +25,9 @@ export function WhySection() {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="space-y-4"
         >
-          <div className="flex items-center gap-2">
-            <p className="text-lg text-primary-foreground/90 leading-relaxed">A lot of people have ideas.</p>
-            <p className="text-lg text-primary-foreground/90 leading-relaxed">A lot of people have skills.</p>
+          <div className="flex items-center md:flex-nowrap flex-wrap gap-2">
+            <p className="text-sm md:text-lg text-white-foreground/90 leading-relaxed">A lot of people have ideas.</p>
+            <p className="text-sm md:text-lg text-white-foreground/90 leading-relaxed">A lot of people have skills.</p>
           </div>
           <p className="text-2xl font-heading font-semibold text-accent">Most people lack clarity.</p>
         </motion.div>
@@ -36,10 +36,10 @@ export function WhySection() {
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.4 }}
-          className="mt-6 space-y-6"
+          className="mt-4 space-y-4"
         >
-          <p className="text-primary-foreground/90 leading-relaxed">I don't overwhelm people with trends or complicated theories.</p>
-          <p className="text-primary-foreground/90 leading-relaxed">I help you understand:</p>
+          <p className=" text-white-foreground/90 leading-relaxed">I don't overwhelm people with trends or complicated theories.</p>
+          <p className=" text-white-foreground/90 leading-relaxed">I help you understand:</p>
 
           <div className="grid sm:grid-cols-2 gap-4 mt-8">
             {points.map((point, i) => (
@@ -56,7 +56,7 @@ export function WhySection() {
             ))}
           </div>
 
-          <p className="text-primary-foreground/90 leading-relaxed mt-8">
+          <p className=" text-white-foreground/90 leading-relaxed mt-8">
             Whether it's your business, career, or brand, my role is to help you move forward with{" "}
             <span className="text-accent font-semibold">structure</span>, <span className="text-accent font-semibold">confidence</span>, and{" "}
             <span className="text-accent font-semibold">direction</span>.

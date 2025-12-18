@@ -113,15 +113,15 @@ const About = () => {
         <div className="mx-auto">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
             <motion.div initial={{ opacity: 0, x: -50 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.8 }}>
-              <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold text-primary mb-6">Who I Am</h1>
-              <p className="text-xl text-primary mb-6 leading-relaxed">
-                I'm <span className="text-primary font-semibold">Jude Iria</span>, a founder, business consultant, career coach, and brand strategist.
+              <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold  text-white mb-6">Who I Am</h1>
+              <p className="text-xl  text-white mb-6 leading-relaxed">
+                I'm <span className=" text-white font-semibold">Jude Iria</span>, a founder, business consultant, career coach, and brand strategist.
               </p>
-              <p className="text-lg text-primary leading-relaxed">
+              <p className="text-lg  text-white leading-relaxed">
                 At my core, I help people make sense of growth. Over the years, I've worked with founders, professionals, and personal brands who were
                 talented, driven, and ambitious but stuck. Not because they lacked ability, but because they lacked clarity, structure, and direction.
               </p>
-              <p className="text-lg text-primary font-medium mt-6">
+              <p className="text-lg  text-white font-medium mt-6">
                 My work is about simplifying that journey and helping people build with intention.
               </p>
             </motion.div>
@@ -148,14 +148,14 @@ const About = () => {
       {/* How My Work Started */}
       <Section className="px-6 py-12 bg-background">
         <div className="container-narrow mx-auto">
-          <h2 className="font-heading text-3xl md:text-4xl font-bold text-primary mb-8">How My Work Started</h2>
-          <div className="space-y-6 text-primary leading-relaxed">
+          <h2 className="font-heading text-3xl md:text-4xl font-bold  text-white mb-8">How My Work Started</h2>
+          <div className="space-y-6  text-white leading-relaxed">
             <p>I didn't start out trying to "do everything."</p>
             <p>I started by solving problems first for myself, then for others.</p>
             <p>
               As I built businesses, worked across different teams, and supported people at different stages of growth, one pattern kept showing up:
             </p>
-            <p className="text-xl text-primary font-heading font-semibold py-4">
+            <p className="text-xl  text-white font-heading font-semibold py-4">
               Most people don't struggle because they aren't capable. They struggle because they don't know what to focus on, what to build, or how to
               structure it properly.
             </p>
@@ -172,8 +172,8 @@ const About = () => {
       {/* What I'm Known For */}
       <Section className="px-6 py-12 bg-secondary">
         <div className="container-narrow mx-auto">
-          <h2 className="font-heading text-3xl md:text-4xl font-bold text-primary mb-8">What I'm Known For</h2>
-          <p className="text-lg text-primary mb-8 leading-relaxed">
+          <h2 className="font-heading text-3xl md:text-4xl font-bold  text-white mb-8">What I'm Known For</h2>
+          <p className="text-lg  text-white mb-8 leading-relaxed">
             I'm known for helping people gain clarity and build structure whether they're starting from scratch or trying to scale.
           </p>
           <div className="grid md:grid-cols-2 gap-4">
@@ -186,11 +186,11 @@ const About = () => {
             ].map((item, i) => (
               <div key={i} className="flex items-start gap-3 p-4 bg-card rounded-lg border border-border">
                 <span className="text-accent mt-1">•</span>
-                <span className="text-primary">{item}</span>
+                <span className=" text-white">{item}</span>
               </div>
             ))}
           </div>
-          <p className="text-lg text-primary font-medium mt-8">
+          <p className="text-lg  text-white font-medium mt-8">
             I don't believe in overcomplicating growth. I believe in clear thinking, simple systems, and intentional execution.
           </p>
         </div>
@@ -199,15 +199,15 @@ const About = () => {
       {/* The Way I Work */}
       <Section className="px-6 py-12 bg-background">
         <div className="container-narrow mx-auto">
-          <h2 className="font-heading text-3xl md:text-4xl font-bold text-primary mb-8">The Way I Work</h2>
-          <div className="space-y-6 text-primary leading-relaxed">
+          <h2 className="font-heading text-3xl md:text-4xl font-bold  text-white mb-8">The Way I Work</h2>
+          <div className="space-y-6  text-white leading-relaxed">
             <p>I don't approach people with assumptions or templates.</p>
             <p>I take time to understand:</p>
             <div className="grid sm:grid-cols-2 gap-4 my-8">
               {["Where you are", "What you've tried", "What's holding you back", "What you actually want to build"].map((item, i) => (
                 <div key={i} className="flex items-center gap-3 p-4 bg-secondary rounded-lg">
                   <div className="w-2 h-2 rounded-full bg-accent" />
-                  <span className="font-medium text-primary">{item}</span>
+                  <span className="font-medium  text-white">{item}</span>
                 </div>
               ))}
             </div>
@@ -225,7 +225,7 @@ const About = () => {
         initial={{ opacity: 0, y: 30 }}
         animate={experienceIsInView ? { opacity: 1, y: 0 } : {}}
         transition={{ duration: 0.6 }}
-        className="px-6 py-12 bg-primary text-primary-foreground"
+        className="px-6 py-12 bg-primary  text-white-foreground"
       >
         <div className="container-wide mx-auto">
           <h2 className="font-heading text-3xl md:text-4xl font-bold mb-12 text-center">Experience & Perspective</h2>
@@ -239,11 +239,11 @@ const About = () => {
                 className="text-center p-8 bg-primary-foreground/5 rounded-xl border border-primary-foreground/10"
               >
                 <AnimatedCounter value={stat.value} prefix={stat.prefix} suffix={stat.suffix} isInView={experienceIsInView} />
-                <p className="text-secondary mt-4">{stat.label}</p>
+                <p className="text-white mt-4">{stat.label}</p>
               </motion.div>
             ))}
           </div>
-          <p className="text-center text-primary-foreground/80 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-center  text-white-foreground/80 max-w-3xl mx-auto leading-relaxed">
             This mix of hands-on building and strategic advising gives me a practical lens. I don't just suggest ideas I help implement what works.
           </p>
         </div>
@@ -252,7 +252,7 @@ const About = () => {
       {/* What I Believe */}
       <Section className="px-6 py-12 bg-background">
         <div className="container-narrow mx-auto">
-          <h2 className="font-heading text-3xl md:text-4xl font-bold text-primary mb-8">What I Believe</h2>
+          <h2 className="font-heading text-3xl md:text-4xl font-bold  text-white mb-8">What I Believe</h2>
           <div className="space-y-4">
             {beliefs.map((belief, i) => (
               <div key={i} className="flex items-center gap-4 p-5 bg-secondary rounded-lg">
@@ -267,14 +267,14 @@ const About = () => {
               </div>
             ))}
           </div>
-          <p className="text-primary mt-8 leading-relaxed">These beliefs shape how I work and who I work with.</p>
+          <p className=" text-white mt-8 leading-relaxed">These beliefs shape how I work and who I work with.</p>
         </div>
       </Section>
 
       {/* Who I Work With */}
       <Section className="px-6 py-12 bg-secondary">
         <div className="container-narrow mx-auto">
-          <h2 className="font-heading text-3xl md:text-4xl font-bold text-primary mb-8">Who I Work With</h2>
+          <h2 className="font-heading text-3xl md:text-4xl font-bold  text-white mb-8">Who I Work With</h2>
           <div className="grid sm:grid-cols-2 gap-6">
             {[
               "Founders building or scaling businesses",
@@ -287,10 +287,10 @@ const About = () => {
               </div>
             ))}
           </div>
-          <p className="text-primary mt-8 leading-relaxed text-center">
+          <p className=" text-white mt-8 leading-relaxed text-center">
             Some are just starting. Some are already established.
             <br />
-            <span className="text-primary font-semibold">All are ready for clarity.</span>
+            <span className=" text-white font-semibold">All are ready for clarity.</span>
           </p>
         </div>
       </Section>
@@ -298,12 +298,12 @@ const About = () => {
       {/* FAQ */}
       <Section className="px-6 py-12 bg-background">
         <div className="container-narrow mx-auto">
-          <h2 className="font-heading text-3xl md:text-4xl font-bold text-primary mb-12 text-center">Frequently Asked Questions</h2>
+          <h2 className="font-heading text-3xl md:text-4xl font-bold  text-white mb-12 text-center">Frequently Asked Questions</h2>
           <Accordion type="single" collapsible className="space-y-4">
             {faqs.map((faq, i) => (
               <AccordionItem key={i} value={`item-${i}`} className="bg-card border border-border rounded-lg px-6">
-                <AccordionTrigger className="text-left font-heading font-semibold text-primary hover:text-accent">{faq.question}</AccordionTrigger>
-                <AccordionContent className="text-primary leading-relaxed">{faq.answer}</AccordionContent>
+                <AccordionTrigger className="text-left font-heading font-semibold  text-white hover:text-accent">{faq.question}</AccordionTrigger>
+                <AccordionContent className=" text-white leading-relaxed">{faq.answer}</AccordionContent>
               </AccordionItem>
             ))}
           </Accordion>
@@ -311,13 +311,13 @@ const About = () => {
       </Section>
 
       {/* CTA */}
-      <section className="px-6 py-12 bg-secondary  text-primary">
+      <section className="px-6 py-12 bg-secondary   text-white">
         <div className="container-narrow mx-auto text-center">
           <h2 className="font-heading text-3xl md:text-4xl font-bold mb-6">Let's Work Together</h2>
-          <p className="text-lg text-primary mb-8 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-lg  text-white mb-8 max-w-2xl mx-auto leading-relaxed">
             If you're feeling stuck, overwhelmed, or unsure of your next step, you don't need more noise. You need clarity.
           </p>
-          <p className="text-primary mb-10">
+          <p className=" text-white mb-10">
             If my work resonates with you, you're welcome to reach out. We'll start with a clarity call and take it from there.
           </p>
           <Button variant="hero" size="xl" asChild className="group">

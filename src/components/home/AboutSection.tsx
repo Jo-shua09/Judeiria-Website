@@ -36,13 +36,13 @@ export function AboutSection() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="md:flex-1"
           >
-            <h2 className="font-heading text-3xl md:text-4xl font-bold text-primary mb-6">So, who is Jude Iria?</h2>
+            <h2 className="font-heading text-3xl md:text-4xl font-bold  text-white mb-6">So, who is Jude Iria?</h2>
 
-            <p className="text-lg text-primary mb-6 leading-relaxed">
-              I'm a founder, consultant, and strategist who helps people <span className="text-primary font-medium">simplify growth</span>.
+            <p className="text-lg  text-white mb-6 leading-relaxed">
+              I'm a founder, consultant, and strategist who helps people <span className=" text-white font-medium">simplify growth</span>.
             </p>
 
-            <p className="text-primary mb-6 leading-relaxed">Over the years, I've worked with:</p>
+            <p className=" text-white mb-6 leading-relaxed">Over the years, I've worked with:</p>
 
             <ul className="space-y-3 mb-8">
               {[
@@ -59,12 +59,12 @@ export function AboutSection() {
                   className="flex items-start gap-3"
                 >
                   <span className="text-accent mt-1">•</span>
-                  <span className="text-primary">{item}</span>
+                  <span className=" text-white">{item}</span>
                 </motion.li>
               ))}
             </ul>
 
-            <p className="text-primary leading-relaxed">
+            <p className=" text-white leading-relaxed">
               My work sits at the intersection of <span className="text-accent font-semibold">clarity</span>,{" "}
               <span className="text-accent font-semibold">structure</span>, <span className="text-accent font-semibold">branding</span>, and{" "}
               <span className="text-accent font-semibold">growth</span> helping people stop guessing and start moving with confidence.

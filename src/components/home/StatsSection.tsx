@@ -62,7 +62,7 @@ export function StatsSection() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="font-heading text-3xl md:text-4xl font-bold text-primary mb-4">A snapshot of my work</h2>
+          <h2 className="font-heading text-3xl md:text-4xl font-bold  text-white mb-4">A snapshot of my work</h2>
         </motion.div>
 
         {/* Stats Grid */}
@@ -76,7 +76,7 @@ export function StatsSection() {
               className="text-center p-8 bg-card rounded-xl border border-border"
             >
               <AnimatedCounter value={stat.value} prefix={stat.prefix} suffix={stat.suffix} isInView={isInView} />
-              <p className="text-primary mt-4">{stat.label}</p>
+              <p className=" text-white mt-4">{stat.label}</p>
             </motion.div>
           ))}
         </div>
@@ -104,7 +104,7 @@ export function StatsSection() {
                     clipRule="evenodd"
                   />
                 </svg>
-                <span className="text-primary">{item}</span>
+                <span className=" text-white">{item}</span>
               </motion.li>
             ))}
           </ul>

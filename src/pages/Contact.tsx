@@ -103,8 +103,8 @@ const Contact = () => {
       <section className="px-6 md:px-12 pt-20 pb-12 bg-secondary">
         <div className="container-narrow mx-auto text-center">
           <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
-            <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold text-primary mb-6">Get In Touch</h1>
-            <p className="text-xl text-primary mb-8 max-w-2xl mx-auto leading-relaxed">
+            <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold  text-white mb-6">Get In Touch</h1>
+            <p className="text-xl  text-white mb-8 max-w-2xl mx-auto leading-relaxed">
               Ready to gain clarity and build with intention? Let's start a conversation about your goals and how I can help you move forward.
             </p>
           </motion.div>
@@ -119,8 +119,8 @@ const Contact = () => {
             <motion.div initial={{ opacity: 0, x: -50 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.8 }}>
               <Card className="border-border">
                 <CardHeader>
-                  <CardTitle className="font-heading text-2xl text-primary">Send a Message</CardTitle>
-                  <p className="text-primary">Fill out the form below and I'll get back to you within 24 hours.</p>
+                  <CardTitle className="font-heading text-2xl  text-white">Send a Message</CardTitle>
+                  <p className=" text-white">Fill out the form below and I'll get back to you within 24 hours.</p>
                 </CardHeader>
                 <CardContent className="space-y-6">
                   <form ref={formRef} onSubmit={handleSubmit} className="space-y-6">
@@ -169,8 +169,8 @@ const Contact = () => {
               className="space-y-8"
             >
               <div>
-                <h2 className="font-heading text-3xl font-bold text-primary mb-6">Contact Information</h2>
-                <p className="text-primary mb-8 leading-relaxed">Prefer to reach out directly? Here are the best ways to connect with me.</p>
+                <h2 className="font-heading text-3xl font-bold  text-white mb-6">Contact Information</h2>
+                <p className=" text-white mb-8 leading-relaxed">Prefer to reach out directly? Here are the best ways to connect with me.</p>
               </div>
 
               <div className="grid sm:grid-cols-2 gap-6">
@@ -182,8 +182,8 @@ const Contact = () => {
                           <info.icon className="w-6 h-6 text-accent" />
                         </div>
                         <div>
-                          <h3 className="font-semibold text-primary mb-1">{info.title}</h3>
-                          <a href={info.link} className="text-primary hover:text-accent transition-colors">
+                          <h3 className="font-semibold  text-white mb-1">{info.title}</h3>
+                          <a href={info.link} className=" text-white hover:text-accent transition-colors">
                             {info.details}
                           </a>
                         </div>
@@ -194,8 +194,8 @@ const Contact = () => {
               </div>
 
               <div className="bg-secondary p-6 rounded-lg">
-                <h3 className="font-heading text-xl font-semibold text-primary mb-4">Quick Response Guarantee</h3>
-                <p className="text-primary leading-relaxed">
+                <h3 className="font-heading text-xl font-semibold  text-white mb-4">Quick Response Guarantee</h3>
+                <p className=" text-white leading-relaxed">
                   I respond to all inquiries within 24 hours during business days. For urgent matters, feel free to call directly.
                 </p>
               </div>
@@ -205,10 +205,10 @@ const Contact = () => {
       </Section>
 
       {/* CTA */}
-      <section className="px-6 md:px-12 py-12 bg-secondary text-primary">
+      <section className="px-6 md:px-12 py-12 bg-secondary  text-white">
         <div className="container-narrow mx-auto text-center">
           <h2 className="font-heading text-3xl md:text-4xl font-bold mb-6">Ready to Get Started?</h2>
-          <p className="text-lg text-primary mb-8 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-lg  text-white mb-8 max-w-2xl mx-auto leading-relaxed">
             The first step toward clarity is often the hardest. Let's make it simple book a free clarity session and see how we can work together.
           </p>
           <Button variant="hero" size="xl" asChild className="group">

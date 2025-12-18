@@ -51,7 +51,7 @@ export function HeroSection() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2, duration: 0.6 }}
-              className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold text-primary leading-tight mb-6"
+              className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6"
             >
               Instant credibility <span className="text-accent">+ clarity.</span>
             </motion.h1>
@@ -60,15 +60,15 @@ export function HeroSection() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4, duration: 0.6 }}
-              className="text-lg md:text-xl text-primary mb-6 leading-relaxed"
+              className="text-lg md:text-xl text-white mb-6 leading-relaxed"
             >
-              I'm <span className="text-primary font-semibold">Jude Iria</span>, a Business Consultant, Career Coach, and Brand & Growth Strategist
+              I'm <span className="text-white font-semibold">Jude Iria</span>, a Business Consultant, Career Coach, and Brand & Growth Strategist
               helping people turn skills into income, brands into businesses, and confusion into clear direction.
             </motion.p>
 
             {/* Credibility Line */}
             <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.6, duration: 0.6 }} className="mb-8">
-              <p className="text-sm text-primary mb-3">Founder of multiple ventures • Worked with founders, professionals, and brands across:</p>
+              <p className="text-sm text-white mb-3">Founder of multiple ventures • Worked with founders, professionals, and brands across:</p>
               <div className="overflow-hidden">
                 <motion.div className="flex gap-4" animate={{ x: ["0%", "-50%"] }} transition={{ duration: 20, ease: "linear", repeat: Infinity }}>
                   {[...flagImages, ...flagImages].map((image, i) => (

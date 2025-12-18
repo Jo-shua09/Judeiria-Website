@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -7,36 +7,36 @@
 @layer base {
   :root {
     /* Premium Navy & Gold Design System */
-    --background: 40 20% 98%;
-    --foreground: 220 30% 10%;
+    --background: 220 60% 10%;
+    --foreground: 40 20% 98%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 220 30% 10%;
+    --card: 220 50% 12%;
+    --card-foreground: 40 20% 98%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 220 30% 10%;
+    --popover: 220 50% 12%;
+    --popover-foreground: 40 20% 98%;
 
     /* Deep Navy Primary */
     --primary: 220 60% 10%;
     --primary-foreground: 40 20% 98%;
 
     /* Warm Cream Secondary */
-    --secondary: 40 25% 95%;
-    --secondary-foreground: 220 30% 10%;
+    --secondary: 220 40% 20%;
+    --secondary-foreground: 40 20% 98%;
 
     /* Muted Tones */
-    --muted: 40 15% 92%;
-    --muted-foreground: 220 15% 45%;
+    --muted: 220 40% 20%;
+    --muted-foreground: 220 15% 65%;
 
     /* Gold Accent */
     --accent: 42 50% 58%;
     --accent-foreground: 220 60% 10%;
 
-    --destructive: 0 84.2% 60.2%;
+    --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 40 20% 98%;
 
-    --border: 220 20% 88%;
-    --input: 220 20% 88%;
+    --border: 220 40% 20%;
+    --input: 220 40% 20%;
     --ring: 42 50% 58%;
 
     --radius: 0.5rem;
@@ -50,13 +50,13 @@
     --warm-gray: 30 10% 55%;
 
     /* Sidebar */
-    --sidebar-background: 220 60% 10%;
+    --sidebar-background: 220 70% 8%;
     --sidebar-foreground: 40 20% 98%;
     --sidebar-primary: 42 50% 58%;
     --sidebar-primary-foreground: 220 60% 10%;
-    --sidebar-accent: 220 40% 20%;
+    --sidebar-accent: 220 50% 15%;
     --sidebar-accent-foreground: 40 20% 98%;
-    --sidebar-border: 220 40% 20%;
+    --sidebar-border: 220 50% 15%;
     --sidebar-ring: 42 50% 58%;
   }
 
@@ -110,10 +110,15 @@
   }
 
   body {
-    @apply bg-background text-foreground font-body antialiased;
+    @apply bg-primary text-white font-body antialiased;
   }
 
-  h1, h2, h3, h4, h5, h6 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     @apply font-heading;
   }
 }
@@ -140,7 +145,7 @@
   }
 
   .underline-accent::after {
-    content: '';
+    content: "";
     @apply absolute bottom-0 left-0 w-full h-0.5 bg-accent transform scale-x-0 origin-left transition-transform duration-300;
   }
 

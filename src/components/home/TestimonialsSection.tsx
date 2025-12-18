@@ -77,7 +77,7 @@ export function TestimonialsSection() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="font-heading text-3xl md:text-4xl font-bold text-primary mb-4">What people say after working with me</h2>
+          <h2 className="font-heading text-3xl md:text-4xl font-bold  text-white mb-4">What people say after working with me</h2>
         </motion.div>
 
         <motion.div initial={{ opacity: 0 }} animate={isInView ? { opacity: 1 } : {}} transition={{ duration: 0.6, delay: 0.2 }} className="relative">
@@ -101,7 +101,7 @@ export function TestimonialsSection() {
                       <div className="flex items-center gap-4 mb-4">
                         <img loading="lazy" src={testimonial.image} alt={testimonial.name} className="w-12 h-12 rounded-full object-cover" />
                         <div>
-                          <p className="font-heading font-semibold text-primary">{testimonial.name}</p>
+                          <p className="font-heading font-semibold  text-white">{testimonial.name}</p>
                           <p className="text-muted-foreground text-sm">{testimonial.role}</p>
                         </div>
                       </div>

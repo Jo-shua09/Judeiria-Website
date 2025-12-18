@@ -3,7 +3,7 @@ import { Link, useLocation } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import logoDark from "@/assets/logoo-light.png";
+import logoDark from "@/assets/logoo-dark.png";
 
 const navLinks = [
   { href: "/", label: "Home" },
@@ -23,7 +23,7 @@ export function Header() {
           {/* Logo */}
           <Link to="/" className="flex items-center">
             <img loading="lazy" src={logoDark} alt="Jude Iria" className="h-10 w-10 rounded-full object-cover" />
-            <span className="text-2xl font-bold font-mono text-primary md:block hidden ml-1">
+            <span className="text-2xl font-bold font-mono  text-white md:block hidden ml-1">
               Jude
               <span className="text-2xl font-normal font-body">Iria</span>
             </span>

@@ -39,8 +39,8 @@ export function ServicesSection() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="font-heading text-3xl md:text-4xl font-bold text-primary mb-4">What I help people do</h2>
-          <p className="text-primary max-w-2xl mx-auto">Clear direction. Simple systems. Real results.</p>
+          <h2 className="font-heading text-3xl md:text-4xl font-bold  text-white mb-4">What I help people do</h2>
+          <p className=" text-white max-w-2xl mx-auto">Clear direction. Simple systems. Real results.</p>
         </motion.div>
 
         <div className="grid md:grid-cols-3 gap-8">
@@ -58,8 +58,8 @@ export function ServicesSection() {
                 <div className="w-14 h-14 bg-accent/10 rounded-xl flex items-center justify-center mb-6 group-hover:bg-accent group-hover:text-accent-foreground transition-colors duration-300">
                   <service.icon className="w-7 h-7 text-accent group-hover:text-accent-foreground" />
                 </div>
-                <h3 className="font-heading text-xl font-semibold text-primary mb-4 group-hover:text-accent transition-colors">{service.title}</h3>
-                <p className="text-primary leading-relaxed">{service.description}</p>
+                <h3 className="font-heading text-xl font-semibold  text-white mb-4 group-hover:text-accent transition-colors">{service.title}</h3>
+                <p className=" text-white leading-relaxed">{service.description}</p>
               </Link>
             </motion.div>
           ))}

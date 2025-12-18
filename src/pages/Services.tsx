@@ -33,25 +33,25 @@ function ServiceSection({ id, icon, title, description, includes, outcomes, ctaT
         <div className={`grid lg:grid-cols-2 gap-12 lg:gap-20 items-start ${reverse ? "lg:flex-row-reverse" : ""}`}>
           <div className={reverse ? "lg:order-2" : ""}>
             <div className="w-16 h-16 bg-accent/10 rounded-2xl flex items-center justify-center mb-6">{icon}</div>
-            <h2 className="font-heading text-3xl md:text-4xl font-bold text-primary mb-6">{title}</h2>
-            <p className="text-lg text-primary leading-relaxed">{description}</p>
+            <h2 className="font-heading text-3xl md:text-4xl font-bold  text-white mb-6">{title}</h2>
+            <p className="text-lg  text-white leading-relaxed">{description}</p>
           </div>
 
           <div className={`space-y-6 ${reverse ? "lg:order-1" : ""}`}>
             <div className="bg-card rounded-xl border border-border p-8">
-              <h3 className="font-heading text-xl font-semibold text-primary mb-6">What this includes:</h3>
+              <h3 className="font-heading text-xl font-semibold  text-white mb-6">What this includes:</h3>
               <ul className="space-y-4">
                 {includes.map((item, i) => (
                   <li key={i} className="flex items-start gap-3">
                     <Check className="w-5 h-5 text-accent mt-0.5 flex-shrink-0" />
-                    <span className="text-primary">{item}</span>
+                    <span className=" text-white">{item}</span>
                   </li>
                 ))}
               </ul>
             </div>
 
             <div className="bg-accent/10 rounded-xl p-8">
-              <h3 className="font-heading text-xl font-semibold text-primary mb-6">What you walk away with:</h3>
+              <h3 className="font-heading text-xl font-semibold  text-white mb-6">What you walk away with:</h3>
               <ul className="space-y-4">
                 {outcomes.map((item, i) => (
                   <li key={i} className="flex items-start gap-3">
@@ -138,7 +138,7 @@ const Services = () => {
   return (
     <Layout>
       {/* Hero */}
-      <section ref={heroRef} className="px-6 md:px-12 py-12 bg-primary text-primary-foreground">
+      <section ref={heroRef} className="px-6 md:px-12 py-12 bg-secondary text-white-foreground">
         <div className="container-narrow mx-auto text-center">
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
@@ -152,7 +152,7 @@ const Services = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={heroInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-xl text-primary-foreground/80 max-w-2xl mx-auto leading-relaxed"
+            className="text-xl  text-white-foreground/80 max-w-2xl mx-auto leading-relaxed"
           >
             Whether you're starting something new or refining what you've already built, I help you focus on what matters, make better decisions, and
             move with intention.
@@ -182,9 +182,9 @@ const Services = () => {
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.6 }}
           >
-            <h2 className="font-heading text-3xl md:text-4xl font-bold text-primary mb-6">Not Sure What You Need Yet?</h2>
-            <p className="text-lg text-primary mb-4 leading-relaxed">That's completely normal.</p>
-            <p className="text-primary mb-10 max-w-2xl mx-auto leading-relaxed">
+            <h2 className="font-heading text-3xl md:text-4xl font-bold  text-white mb-6">Not Sure What You Need Yet?</h2>
+            <p className="text-lg  text-white mb-4 leading-relaxed">That's completely normal.</p>
+            <p className=" text-white mb-10 max-w-2xl mx-auto leading-relaxed">
               Most people don't come in knowing whether they need consulting, coaching, or brand strategy they just know something feels off or
               unclear. We'll figure it out together.
             </p>
