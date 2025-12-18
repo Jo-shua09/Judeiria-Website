@@ -38,7 +38,7 @@ export function HeroSection() {
         />
       </div>
 
-      <div className="px-6 md:px-12 mx-auto">
+      <div className="px-4 md:px-12 mx-auto">
         <div className="flex lg:flex-nowrap justify-center md:py-16 py-0 flex-wrap gap-16 lg:gap-20 items-center">
           {/* Content */}
           <motion.div

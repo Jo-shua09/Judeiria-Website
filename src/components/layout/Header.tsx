@@ -18,7 +18,7 @@ export function Header() {
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border">
-      <nav className="px-6 md:px-12 mx-auto">
+      <nav className="px-4 md:px-12 mx-auto">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <Link to="/" className="flex items-center">
@@ -69,7 +69,7 @@ export function Header() {
             exit={{ opacity: 0, height: 0 }}
             className="md:hidden bg-background border-b border-border"
           >
-            <div className="px-6 py-4 space-y-4">
+            <div className="px-4 py-4 space-y-4">
               {navLinks.map((link) => (
                 <Link
                   key={link.href}

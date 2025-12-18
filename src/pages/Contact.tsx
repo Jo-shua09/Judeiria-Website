@@ -100,7 +100,7 @@ const Contact = () => {
   return (
     <Layout>
       {/* Hero */}
-      <section className="px-6 md:px-12 pt-20 pb-12 bg-secondary">
+      <section className="px-4 md:px-12 pt-20 pb-12 bg-secondary">
         <div className="container-narrow mx-auto text-center">
           <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
             <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold  text-white mb-6">Get In Touch</h1>
@@ -112,7 +112,7 @@ const Contact = () => {
       </section>
 
       {/* Contact Form & Info */}
-      <Section className="px-6 md:px-12 py-12 bg-background">
+      <Section className="px-4 md:px-12 py-12 bg-background">
         <div className="container-wide mx-auto">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-20">
             {/* Contact Form */}
@@ -205,7 +205,7 @@ const Contact = () => {
       </Section>
 
       {/* CTA */}
-      <section className="px-6 md:px-12 py-12 bg-secondary  text-white">
+      <section className="px-4 md:px-12 py-12 bg-secondary  text-white">
         <div className="container-narrow mx-auto text-center">
           <h2 className="font-heading text-3xl md:text-4xl font-bold mb-6">Ready to Get Started?</h2>
           <p className="text-lg  text-white mb-8 max-w-2xl mx-auto leading-relaxed">

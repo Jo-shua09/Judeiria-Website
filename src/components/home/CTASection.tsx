@@ -8,7 +8,7 @@ export function CTASection() {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section ref={ref} className="px-6 md:px-12 py-12 bg-secondary  text-white-foreground">
+    <section ref={ref} className="px-4 md:px-12 py-12 bg-secondary  text-white-foreground">
       <div className="container-narrow mx-auto text-center">
         <motion.div initial={{ opacity: 0, y: 30 }} animate={isInView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.6 }}>
           <h2 className="font-heading text-3xl  text-white md:text-4xl lg:text-5xl font-bold mb-6">

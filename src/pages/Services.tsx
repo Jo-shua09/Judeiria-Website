@@ -27,10 +27,10 @@ function ServiceSection({ id, icon, title, description, includes, outcomes, ctaT
       initial={{ opacity: 0, y: 50 }}
       animate={isInView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.6 }}
-      className={`px-6 md:px-12 py-16 ${reverse ? "bg-secondary" : "bg-background"}`}
+      className={`px-4 md:px-12 py-16 ${reverse ? "bg-secondary" : "bg-background"}`}
     >
-      <div className="container-wide mx-auto">
-        <div className={`grid lg:grid-cols-2 gap-12 lg:gap-20 items-start ${reverse ? "lg:flex-row-reverse" : ""}`}>
+      <div className="container-wide mx-auto ">
+        <div className={`grid px-2 grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start ${reverse ? "lg:flex-row-reverse" : ""}`}>
           <div className={reverse ? "lg:order-2" : ""}>
             <div className="w-16 h-16 bg-accent/10 rounded-2xl flex items-center justify-center mb-6">{icon}</div>
             <h2 className="font-heading text-3xl md:text-4xl font-bold  text-white mb-6">{title}</h2>
@@ -62,7 +62,7 @@ function ServiceSection({ id, icon, title, description, includes, outcomes, ctaT
               </ul>
             </div>
             <div className="w-full">
-              <Button variant="hero" size="lg" asChild className="group w-full">
+              <Button variant="hero" size="lg" asChild className="group text-sm md:text-lg w-full">
                 <a href={ctaLink} target="_blank" rel="noopener noreferrer">
                   {ctaText}
                   <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
@@ -138,7 +138,7 @@ const Services = () => {
   return (
     <Layout>
       {/* Hero */}
-      <section ref={heroRef} className="px-6 md:px-12 py-12 bg-secondary text-white-foreground">
+      <section ref={heroRef} className="px-4 md:px-12 py-12 bg-secondary text-white-foreground">
         <div className="container-narrow mx-auto text-center">
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
@@ -174,7 +174,7 @@ const Services = () => {
       ))}
 
       {/* Not Sure CTA */}
-      <section className="px-6 md:px-12 py-12 bg-secondary">
+      <section className="px-4 md:px-12 py-12 bg-secondary">
         <div className="container-narrow mx-auto text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}

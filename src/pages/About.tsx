@@ -109,7 +109,7 @@ const About = () => {
   return (
     <Layout>
       {/* Hero */}
-      <section className="px-6 md:px-12 md:pt-0 pt-8 bg-secondary">
+      <section className="px-4 md:px-12 md:pt-0 pt-8 bg-secondary">
         <div className="mx-auto">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
             <motion.div initial={{ opacity: 0, x: -50 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.8 }}>
@@ -146,7 +146,7 @@ const About = () => {
       </section>
 
       {/* How My Work Started */}
-      <Section className="px-6 py-12 bg-background">
+      <Section className="px-4 py-12 bg-background">
         <div className="container-narrow mx-auto">
           <h2 className="font-heading text-3xl md:text-4xl font-bold  text-white mb-8">How My Work Started</h2>
           <div className="space-y-6  text-white leading-relaxed">
@@ -170,7 +170,7 @@ const About = () => {
       </Section>
 
       {/* What I'm Known For */}
-      <Section className="px-6 py-12 bg-secondary">
+      <Section className="px-4 py-12 bg-secondary">
         <div className="container-narrow mx-auto">
           <h2 className="font-heading text-3xl md:text-4xl font-bold  text-white mb-8">What I'm Known For</h2>
           <p className="text-lg  text-white mb-8 leading-relaxed">
@@ -197,7 +197,7 @@ const About = () => {
       </Section>
 
       {/* The Way I Work */}
-      <Section className="px-6 py-12 bg-background">
+      <Section className="px-4 py-12 bg-background">
         <div className="container-narrow mx-auto">
           <h2 className="font-heading text-3xl md:text-4xl font-bold  text-white mb-8">The Way I Work</h2>
           <div className="space-y-6  text-white leading-relaxed">
@@ -225,7 +225,7 @@ const About = () => {
         initial={{ opacity: 0, y: 30 }}
         animate={experienceIsInView ? { opacity: 1, y: 0 } : {}}
         transition={{ duration: 0.6 }}
-        className="px-6 py-12 bg-primary  text-white-foreground"
+        className="px-4 py-12 bg-primary  text-white-foreground"
       >
         <div className="container-wide mx-auto">
           <h2 className="font-heading text-3xl md:text-4xl font-bold mb-12 text-center">Experience & Perspective</h2>
@@ -250,7 +250,7 @@ const About = () => {
       </motion.section>
 
       {/* What I Believe */}
-      <Section className="px-6 py-12 bg-background">
+      <Section className="px-4 py-12 bg-background">
         <div className="container-narrow mx-auto">
           <h2 className="font-heading text-3xl md:text-4xl font-bold  text-white mb-8">What I Believe</h2>
           <div className="space-y-4">
@@ -272,7 +272,7 @@ const About = () => {
       </Section>
 
       {/* Who I Work With */}
-      <Section className="px-6 py-12 bg-secondary">
+      <Section className="px-4 py-12 bg-secondary">
         <div className="container-narrow mx-auto">
           <h2 className="font-heading text-3xl md:text-4xl font-bold  text-white mb-8">Who I Work With</h2>
           <div className="grid sm:grid-cols-2 gap-6">
@@ -296,12 +296,12 @@ const About = () => {
       </Section>
 
       {/* FAQ */}
-      <Section className="px-6 py-12 bg-background">
+      <Section className="px-4 py-12 bg-background">
         <div className="container-narrow mx-auto">
           <h2 className="font-heading text-3xl md:text-4xl font-bold  text-white mb-12 text-center">Frequently Asked Questions</h2>
           <Accordion type="single" collapsible className="space-y-4">
             {faqs.map((faq, i) => (
-              <AccordionItem key={i} value={`item-${i}`} className="bg-card border border-border rounded-lg px-6">
+              <AccordionItem key={i} value={`item-${i}`} className="bg-card border border-border rounded-lg px-4">
                 <AccordionTrigger className="text-left font-heading font-semibold  text-white hover:text-accent">{faq.question}</AccordionTrigger>
                 <AccordionContent className=" text-white leading-relaxed">{faq.answer}</AccordionContent>
               </AccordionItem>
@@ -311,7 +311,7 @@ const About = () => {
       </Section>
 
       {/* CTA */}
-      <section className="px-6 py-12 bg-secondary   text-white">
+      <section className="px-4 py-12 bg-secondary   text-white">
         <div className="container-narrow mx-auto text-center">
           <h2 className="font-heading text-3xl md:text-4xl font-bold mb-6">Let's Work Together</h2>
           <p className="text-lg  text-white mb-8 max-w-2xl mx-auto leading-relaxed">
