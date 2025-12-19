@@ -7,7 +7,7 @@
 @layer base {
   :root {
     /* Premium Navy & Gold Design System */
-    --background: 220 60% 10%;
+    --background: 224 19% 12%;
     --foreground: 40 20% 98%;
 
     --card: 220 50% 12%;
@@ -17,7 +17,7 @@
     --popover-foreground: 40 20% 98%;
 
     /* Deep Navy Primary */
-    --primary: 220 60% 10%;
+    --primary: 224 19% 12%;
     --primary-foreground: 40 20% 98%;
 
     /* Warm Cream Secondary */
@@ -29,7 +29,7 @@
     --muted-foreground: 220 15% 65%;
 
     /* Gold Accent */
-    --accent: 42 50% 58%;
+    --accent: 48 100% 53%;
     --accent-foreground: 220 60% 10%;
 
     --destructive: 0 62.8% 30.6%;
@@ -37,15 +37,15 @@
 
     --border: 220 40% 20%;
     --input: 220 40% 20%;
-    --ring: 42 50% 58%;
+    --ring: 48 100% 53%;
 
     --radius: 0.5rem;
 
     /* Custom Colors */
-    --navy: 220 60% 10%;
+    --navy: 224 19% 12%;
     --navy-light: 220 40% 20%;
-    --gold: 42 50% 58%;
-    --gold-light: 42 45% 70%;
+    --gold: 48 100% 53%;
+    --gold-light: 48 100% 65%;
     --cream: 40 20% 98%;
     --warm-gray: 30 10% 55%;
 

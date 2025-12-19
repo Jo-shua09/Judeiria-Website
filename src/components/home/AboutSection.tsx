@@ -19,7 +19,7 @@ export function AboutSection() {
             className="md:flex-1 md:px-0 px-8"
           >
             <div className="relative">
-              <div className="absolute -inset-4 bg-primary/10 rounded-2xl transform -rotate-3" />
+              <div className="absolute -inset-4 bg-accent/20 rounded-2xl transform -rotate-3" />
               <img
                 loading="lazy"
                 src={judePortrait}

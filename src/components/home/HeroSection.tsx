@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import judeHero from "@/assets/jude-portrait.jpg";
+import judeHero from "@/assets/face-cropped.jpg";
 
 const flagLinks = [
   "https://en.wikipedia.org/wiki/Flag_of_the_United_States",
@@ -51,9 +51,12 @@ export function HeroSection() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2, duration: 0.6 }}
-              className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6"
+              className="border bg-black my-6 text-center p-1 pr-6 md:mb-6 md:mx-0 mx-auto rounded-full w-fit "
             >
-              Instant credibility <span className="text-accent">+ clarity.</span>
+              <span className="bg-accent/50 text-white rounded-3xl mr-2 px-2 py-1 !mb-2 text-sm">New</span>
+              <span className="font-bold text-white leading-tight">
+                Instant credibility <span className="text-accent">+ Clarity.</span>
+              </span>
             </motion.h1>
 
             <motion.p
