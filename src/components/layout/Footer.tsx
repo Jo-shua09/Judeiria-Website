@@ -1,22 +1,18 @@
 import { Link } from "react-router-dom";
 import { Linkedin, Twitter, Instagram } from "lucide-react";
-import logoDark from "@/assets/logoo-dark.png";
+import logoDark from "@/assets/logo.png";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 
 export function Footer() {
   return (
-    <footer className="bg-primary  text-white-foreground">
-      <div className="mx-auto px-4 md:px-12 py-12">
+    <footer className="bg-secondary border-t border-border">
+      <div className="mx-auto px-4 md:px-10 py-10">
         <div className="grid grid-cols-1 md:grid-cols-4 lg:grid-cols-6 gap-12">
           {/* Brand */}
           <div className="md:col-span-2">
-            <Link to="/" className="flex items-center mb-4">
-              <img loading="lazy" src={logoDark} alt="Jude Iria" className="h-10 w-10 rounded-full object-cover" />
-              <span className="text-2xl font-bold font-mono ml-1">
-                Jude
-                <span className="text-2xl font-normal font-body">Iria</span>
-              </span>
+            <Link to="/" className="flex items-center w-fit">
+              <img loading="lazy" src={logoDark} alt="Jude Iria" className="w-[10rem] rounded-full object-contain" />
             </Link>
             <p className=" text-white-foreground/80 max-w-sm leading-relaxed">
               Business Consultant, Career Coach, and Brand & Growth Strategist helping people turn skills into income and confusion into clear

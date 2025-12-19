@@ -3,7 +3,7 @@ import { Link, useLocation } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import logoDark from "@/assets/logoo-dark.png";
+import logoDark from "@/assets/logo.png";
 
 const navLinks = [
   { href: "/", label: "Home" },
@@ -18,15 +18,11 @@ export function Header() {
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border">
-      <nav className="px-4 md:px-12 mx-auto">
+      <nav className="px-4 md:px-8 mx-auto">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <Link to="/" className="flex items-center">
-            <img loading="lazy" src={logoDark} alt="Jude Iria" className="h-10 w-10 rounded-full object-cover" />
-            <span className="text-2xl font-bold font-mono  text-white md:block hidden ml-1">
-              Jude
-              <span className="text-2xl font-normal font-body">Iria</span>
-            </span>
+          <Link to="/" className="flex items-center w-fit">
+            <img loading="lazy" src={logoDark} alt="Jude Iria" className="w-[10rem] rounded-full object-contain" />
           </Link>
 
           {/* Desktop Navigation */}
@@ -47,7 +43,7 @@ export function Header() {
           {/* CTA Button */}
           <div className="hidden md:block">
             <Button variant="hero" size="lg" asChild>
-              <a href="https://calendly.com/judeiria/business_consultation" target="_blank" rel="noopener noreferrer">
+              <a href="https://calendly.com/judeiria/business_consultation/judeiria/business_consultation" target="_blank" rel="noopener noreferrer">
                 Book a Clarity Session
               </a>
             </Button>
@@ -83,7 +79,11 @@ export function Header() {
                 </Link>
               ))}
               <Button variant="hero" className="w-full mt-4" asChild>
-                <a href="https://calendly.com/judeiria/business_consultation" target="_blank" rel="noopener noreferrer">
+                <a
+                  href="https://calendly.com/judeiria/business_consultation/judeiria/business_consultation"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   Book a Clarity Session
                 </a>
               </Button>

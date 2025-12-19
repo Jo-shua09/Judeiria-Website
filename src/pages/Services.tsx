@@ -92,7 +92,7 @@ const services = [
     ],
     outcomes: ["Clear direction for your business", "Better structure and systems", "Confidence in your next move"],
     ctaText: "Book a Business Consulting Session",
-    ctaLink: "https://calendly.com/judeiria/business_consultation",
+    ctaLink: "https://calendly.com/judeiria/business_consultation/judeiria/business_consultation",
   },
   {
     id: "coaching",
@@ -109,7 +109,7 @@ const services = [
     ],
     outcomes: ["Confidence in your direction", "A clear plan aligned with your strengths", "Better professional positioning"],
     ctaText: "Book a Career Clarity Call",
-    ctaLink: "https://calendly.com/judeiria/business_consultation",
+    ctaLink: "https://calendly.com/judeiria/business_consultation/judeiria/business_consultation",
     reverse: true,
   },
   {
@@ -127,7 +127,7 @@ const services = [
     ],
     outcomes: ["A clear, professional presence", "Consistent brand messaging", "Attraction of the right conversations and opportunities"],
     ctaText: "Book a Brand Strategy Session",
-    ctaLink: "https://calendly.com/judeiria/business_consultation",
+    ctaLink: "https://calendly.com/judeiria/business_consultation/judeiria/business_consultation",
   },
 ];
 
@@ -138,32 +138,31 @@ const Services = () => {
   return (
     <Layout>
       {/* Hero */}
-      <section ref={heroRef} className="px-4 md:px-12 py-12 bg-secondary text-white-foreground">
+      <section ref={heroRef} className="section-padding bg-secondary pt-24">
         <div className="container-narrow mx-auto text-center">
           <motion.h1
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 20 }}
             animate={heroInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.6 }}
-            className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold mb-6"
+            transition={{ duration: 0.5 }}
+            className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4"
           >
             Build clarity that moves you forward.
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={heroInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-xl  text-white-foreground/80 max-w-2xl mx-auto leading-relaxed"
+            transition={{ duration: 0.5, delay: 0.1 }}
+            className="text-muted-foreground max-w-2xl mx-auto leading-relaxed"
           >
-            Whether you're starting something new or refining what you've already built, I help you focus on what matters, make better decisions, and
-            move with intention.
+            Whether you're starting something new or refining what you've built, I help you focus on what matters and move with intention.
           </motion.p>
           <motion.p
             initial={{ opacity: 0 }}
             animate={heroInView ? { opacity: 1 } : {}}
-            transition={{ duration: 0.6, delay: 0.4 }}
-            className="text-accent font-heading font-semibold text-lg mt-6"
+            transition={{ duration: 0.5, delay: 0.2 }}
+            className="text-primary font-semibold text-sm mt-4"
           >
-            No noise. No guesswork. Just clear thinking and smart direction.
+            No noise. No guesswork. Just clear thinking.
           </motion.p>
         </div>
       </section>
@@ -174,24 +173,24 @@ const Services = () => {
       ))}
 
       {/* Not Sure CTA */}
-      <section className="px-4 md:px-12 py-12 bg-secondary">
-        <div className="container-narrow mx-auto text-center">
+      <section className="py-10 bg-secondary relative overflow-hidden">
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] bg-primary/10 rounded-full blur-[100px] pointer-events-none" />
+        <div className="container-narrow mx-auto text-center relative z-10">
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.5 }}
           >
-            <h2 className="font-heading text-3xl md:text-4xl font-bold  text-white mb-6">Not Sure What You Need Yet?</h2>
-            <p className="text-lg  text-white mb-4 leading-relaxed">That's completely normal.</p>
-            <p className=" text-white mb-10 max-w-2xl mx-auto leading-relaxed">
-              Most people don't come in knowing whether they need consulting, coaching, or brand strategy they just know something feels off or
-              unclear. We'll figure it out together.
+            <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-4">Not Sure What You Need Yet?</h2>
+            <p className="text-muted-foreground mb-6 max-w-xl mx-auto text-sm">
+              That's completely normal. Most people don't come in knowing what they need—they just know something feels off. We'll figure it out
+              together.
             </p>
-            <Button variant="cta" size="xl" asChild className="group">
+            <Button variant="hero" size="lg" asChild className="group">
               <a href="https://calendly.com/judeiria/business_consultation" target="_blank" rel="noopener noreferrer">
                 Book a Clarity Call
-                <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </a>
             </Button>
           </motion.div>

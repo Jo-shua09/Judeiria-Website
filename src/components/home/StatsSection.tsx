@@ -54,15 +54,15 @@ export function StatsSection() {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section ref={ref} className="px-4 py-12 bg-secondary">
+    <section ref={ref} className="px-4 py-10 bg-secondary">
       <div className="container-wide mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="text-center mb-10"
         >
-          <h2 className="font-heading text-3xl md:text-4xl font-bold  text-white mb-4">A snapshot of my work</h2>
+          <h2 className="font-heading text-2xl md:text-3xl lg:text-4xl font-bold  text-white mb-4">A snapshot of my work</h2>
         </motion.div>
 
         {/* Stats Grid */}
@@ -73,7 +73,7 @@ export function StatsSection() {
               initial={{ opacity: 0, y: 30 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: 0.2 + i * 0.15 }}
-              className="text-center p-8 bg-card rounded-xl border border-border"
+              className="text-center p-4 bg-card rounded-xl border border-border"
             >
               <AnimatedCounter value={stat.value} prefix={stat.prefix} suffix={stat.suffix} isInView={isInView} />
               <p className=" text-white mt-4">{stat.label}</p>
@@ -86,7 +86,7 @@ export function StatsSection() {
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.5 }}
-          className="bg-card rounded-xl border border-border p-8 md:p-12"
+          className="bg-card rounded-xl border border-border p-4 md:p-8"
         >
           <ul className="grid md:grid-cols-2 gap-4">
             {highlights.map((item, i) => (

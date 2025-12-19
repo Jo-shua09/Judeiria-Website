@@ -7,7 +7,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Mail, Phone, MapPin, Clock, Send } from "lucide-react";
+import { Mail, Phone, MapPin, Clock, Send, ArrowRight } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 
 const contactInfo = [
@@ -33,12 +33,6 @@ const contactInfo = [
     icon: MapPin,
     title: "Location",
     details: "Available globally, based in Nigeria.",
-    link: "#",
-  },
-  {
-    icon: Clock,
-    title: "Business Hours",
-    details: "Mon-Fri: Flexible Hours",
     link: "#",
   },
 ];
@@ -100,11 +94,11 @@ const Contact = () => {
   return (
     <Layout>
       {/* Hero */}
-      <section className="px-4 md:px-12 pt-20 pb-12 bg-secondary">
+      <section className="section-padding bg-secondary pt-24">
         <div className="container-narrow mx-auto text-center">
           <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
-            <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold  text-white mb-6">Get In Touch</h1>
-            <p className="text-xl  text-white mb-8 max-w-2xl mx-auto leading-relaxed">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4">Get In Touch</h1>
+            <p className="text-muted-foreground max-w-2xl mx-auto leading-relaxed">
               Ready to gain clarity and build with intention? Let's start a conversation about your goals and how I can help you move forward.
             </p>
           </motion.div>
@@ -169,8 +163,8 @@ const Contact = () => {
               className="space-y-8"
             >
               <div>
-                <h2 className="font-heading text-3xl font-bold  text-white mb-6">Contact Information</h2>
-                <p className=" text-white mb-8 leading-relaxed">Prefer to reach out directly? Here are the best ways to connect with me.</p>
+                <h2 className="font-heading text-3xl font-bold  text-white mb-3">Contact Information</h2>
+                <p className=" text-white leading-relaxed">Prefer to reach out directly? Here are the best ways to connect with me.</p>
               </div>
 
               <div className="grid sm:grid-cols-2 gap-6">
@@ -205,16 +199,15 @@ const Contact = () => {
       </Section>
 
       {/* CTA */}
-      <section className="px-4 md:px-12 py-12 bg-secondary  text-white">
-        <div className="container-narrow mx-auto text-center">
-          <h2 className="font-heading text-3xl md:text-4xl font-bold mb-6">Ready to Get Started?</h2>
-          <p className="text-lg  text-white mb-8 max-w-2xl mx-auto leading-relaxed">
-            The first step toward clarity is often the hardest. Let's make it simple book a free clarity session and see how we can work together.
-          </p>
-          <Button variant="hero" size="xl" asChild className="group">
+      <section className="py-10 bg-background relative overflow-hidden">
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] bg-primary/10 rounded-full blur-[100px] pointer-events-none" />
+        <div className="container-narrow mx-auto text-center relative z-10">
+          <h2 className="text-xl md:text-2xl font-bold text-foreground mb-3">Prefer to talk directly?</h2>
+          <p className="text-sm text-muted-foreground mb-6">Book a clarity session and let's figure out your next step together.</p>
+          <Button variant="hero" size="lg" asChild className="group">
             <a href="https://calendly.com/judeiria/business_consultation" target="_blank" rel="noopener noreferrer">
               Book a Clarity Session
-              <Send className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </a>
           </Button>
         </div>

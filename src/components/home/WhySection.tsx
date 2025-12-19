@@ -1,66 +1,67 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 
-const points = ["Where you are", "What's holding you back", "What actually matters", "And what to focus on next"];
+const points = ["Where you are", "What's holding you back", "What actually matters", "What to focus on next"];
 
 export function WhySection() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section ref={ref} className="py-12 px-4 bg-primary  text-white-foreground">
+    <section ref={ref} className="section-padding bg-background">
       <div className="container-narrow mx-auto">
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-6"
+          transition={{ duration: 0.5 }}
+          className="text-center mb-8"
         >
-          <h2 className="font-heading text-3xl md:text-4xl font-bold mb-6">Why people choose to work with me</h2>
+          <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-4">Why people choose to work with me</h2>
         </motion.div>
 
         <motion.div
           initial={{ opacity: 0 }}
           animate={isInView ? { opacity: 1 } : {}}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          className="space-y-4"
+          transition={{ duration: 0.5, delay: 0.1 }}
+          className="text-center space-y-2 mb-8"
         >
-          <div className="flex items-center md:flex-nowrap flex-wrap gap-2">
-            <p className="text-sm md:text-lg text-white-foreground/90 leading-relaxed">A lot of people have ideas.</p>
-            <p className="text-sm md:text-lg text-white-foreground/90 leading-relaxed">A lot of people have skills.</p>
-          </div>
-          <p className="text-2xl font-heading font-semibold text-accent">Most people lack clarity.</p>
+          <p className="text-muted-foreground">A lot of people have ideas.</p>
+          <p className="text-muted-foreground">A lot of people have skills.</p>
+          <p className="text-xl font-semibold text-primary">Most people lack clarity.</p>
         </motion.div>
 
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6, delay: 0.4 }}
-          className="mt-4 space-y-4"
+          transition={{ duration: 0.5, delay: 0.2 }}
+          className="space-y-4"
         >
-          <p className=" text-white-foreground/90 leading-relaxed">I don't overwhelm people with trends or complicated theories.</p>
-          <p className=" text-white-foreground/90 leading-relaxed">I help you understand:</p>
+          <p className="text-center text-muted-foreground text-sm mb-6">I help you understand:</p>
 
-          <div className="grid sm:grid-cols-2 gap-4 mt-8">
+          <div className="grid sm:grid-cols-2 gap-3">
             {points.map((point, i) => (
               <motion.div
                 key={point}
-                initial={{ opacity: 0, x: -20 }}
+                initial={{ opacity: 0, x: -10 }}
                 animate={isInView ? { opacity: 1, x: 0 } : {}}
-                transition={{ duration: 0.5, delay: 0.6 + i * 0.1 }}
-                className="flex items-center gap-3 p-4 bg-primary-foreground/5 rounded-lg border border-primary-foreground/10"
+                transition={{ duration: 0.4, delay: 0.3 + i * 0.1 }}
+                className="flex items-center gap-3 p-3 bg-card rounded-lg border border-border"
               >
-                <div className="w-2 h-2 rounded-full bg-accent" />
-                <span className="font-medium">{point}</span>
+                <div className="w-2 h-2 rounded-full bg-primary" />
+                <span className="text-sm font-medium text-foreground">{point}</span>
               </motion.div>
             ))}
           </div>
 
-          <p className=" text-white-foreground/90 leading-relaxed mt-8">
-            Whether it's your business, career, or brand, my role is to help you move forward with{" "}
-            <span className="text-accent font-semibold">structure</span>, <span className="text-accent font-semibold">confidence</span>, and{" "}
-            <span className="text-accent font-semibold">direction</span>.
-          </p>
+          <motion.p
+            initial={{ opacity: 0 }}
+            animate={isInView ? { opacity: 1 } : {}}
+            transition={{ duration: 0.5, delay: 0.5 }}
+            className="text-center text-muted-foreground text-sm mt-6"
+          >
+            Whether it's your business, career, or brand — I help you move forward with <span className="text-primary font-medium">structure</span>,{" "}
+            <span className="text-primary font-medium">confidence</span>, and <span className="text-primary font-medium">direction</span>.
+          </motion.p>
         </motion.div>
       </div>
     </section>

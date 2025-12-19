@@ -26,7 +26,7 @@ const flagImages = [
 
 export function HeroSection() {
   return (
-    <section className="relative min-h-[90vh] flex items-center bg-background overflow-hidden py-6">
+    <section className="relative min-h-[90vh] flex items-center bg-background/70 overflow-hidden py-6">
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-[0.03]">
         <div
@@ -51,9 +51,8 @@ export function HeroSection() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2, duration: 0.6 }}
-              className="border bg-black my-6 text-center p-1 pr-6 md:mb-6 md:mx-0 mx-auto rounded-full w-fit "
+              className="border bg-black my-6 text-center p-1 px-6 md:mb-6 md:mx-0 mx-auto rounded-full w-fit "
             >
-              <span className="bg-accent/50 text-white rounded-3xl mr-2 px-2 py-1 !mb-2 text-sm">New</span>
               <span className="font-bold text-white leading-tight">
                 Instant credibility <span className="text-accent">+ Clarity.</span>
               </span>
@@ -91,7 +90,11 @@ export function HeroSection() {
               className="flex flex-col sm:flex-row gap-4"
             >
               <Button variant="hero" size="xl" asChild>
-                <a href="https://calendly.com/judeiria/business_consultation" target="_blank" rel="noopener noreferrer">
+                <a
+                  href="https://calendly.com/judeiria/business_consultation/judeiria/business_consultation"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   Book a Clarity Session
                 </a>
               </Button>
