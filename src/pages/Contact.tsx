@@ -199,7 +199,7 @@ const Contact = () => {
       </Section>
 
       {/* CTA */}
-      <section className="py-10 bg-background relative overflow-hidden">
+      <section className="py-10 px-4 bg-background relative overflow-hidden">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] bg-primary/10 rounded-full blur-[100px] pointer-events-none" />
         <div className="container-narrow mx-auto text-center relative z-10">
           <h2 className="text-xl md:text-2xl font-bold text-foreground mb-3">Prefer to talk directly?</h2>

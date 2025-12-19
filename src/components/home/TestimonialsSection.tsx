@@ -77,7 +77,7 @@ export function TestimonialsSection() {
           transition={{ duration: 0.6 }}
           className="text-center mb-10"
         >
-          <h2 className="font-heading text-2xl md:text-3xl lg:text-4xl font-bold  text-white mb-4">What people say after working with me</h2>
+          <h2 className="text-2xl md:px-0 px-10 md:text-3xl font-bold text-foreground mb-2">What people say after working with me</h2>
         </motion.div>
 
         <motion.div initial={{ opacity: 0 }} animate={isInView ? { opacity: 1 } : {}} transition={{ duration: 0.6, delay: 0.2 }} className="relative">

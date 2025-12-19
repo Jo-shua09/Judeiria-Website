@@ -109,7 +109,7 @@ const About = () => {
   return (
     <Layout>
       {/* Hero */}
-      <section className="md:px-10 px-4 bg-background">
+      <section className="md:px-10 pt-12 px-4 bg-background">
         <div className="mx-auto">
           <div className="grid lg:grid-cols-2 grid-cols-1 gap-12 lg:gap-20 items-center">
             <motion.div initial={{ opacity: 0, x: -30 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.5 }}>
@@ -145,7 +145,7 @@ const About = () => {
       </section>
 
       {/* How My Work Started */}
-      <Section className=" py-10 bg-secondary">
+      <Section className="py-10 px-4 bg-secondary">
         <div className="container-narrow mx-auto">
           <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-6">How My Work Started</h2>
           <div className="space-y-4 text-muted-foreground leading-relaxed">
@@ -170,7 +170,7 @@ const About = () => {
       </Section>
 
       {/* What I'm Known For */}
-      <Section className="py-10 bg-background">
+      <Section className="py-10 px-4 bg-background">
         <div className="container-narrow mx-auto">
           <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-6">What I'm Known For</h2>
           <div className="grid sm:grid-cols-2 gap-3">
@@ -194,7 +194,7 @@ const About = () => {
       {/* The Way I Work */}
       <Section className="px-4 py-12 bg-background">
         <div className="container-narrow mx-auto">
-          <h2 className="font-heading text-3xl md:text-4xl font-bold  text-white mb-8">The Way I Work</h2>
+          <h2 className="font-heading text-3xl md:text-4xl font-bold  text-white mb-6">The Way I Work</h2>
           <div className="space-y-6  text-white leading-relaxed">
             <p>I don't approach people with assumptions or templates.</p>
             <p>I take time to understand:</p>
@@ -207,7 +207,7 @@ const About = () => {
               ))}
             </div>
             <p>From there, I help you focus on what matters, remove distractions, and build what will move you forward.</p>
-            <p className="text-xl text-accent font-heading font-semibold">
+            <p className="text-lg text-accent font-heading font-semibold">
               Whether I'm consulting, coaching, or leading strategy, the goal is the same: clarity first, then growth.
             </p>
           </div>
@@ -220,7 +220,7 @@ const About = () => {
         initial={{ opacity: 0, y: 30 }}
         animate={experienceIsInView ? { opacity: 1, y: 0 } : {}}
         transition={{ duration: 0.6 }}
-        className="px-4 py-10 bg-secondary"
+        className="py-10 px-4 bg-secondary"
       >
         <div className="container-wide mx-auto">
           <h2 className="font-heading text-3xl md:text-4xl font-bold mb-12 text-center">Experience & Perspective</h2>
@@ -245,7 +245,7 @@ const About = () => {
       </motion.section>
 
       {/* What I Believe */}
-      <Section className="py-10 bg-background">
+      <Section className="py-10 px-4 bg-background">
         <div className="container-narrow mx-auto">
           <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-6">What I Believe</h2>
           <div className="space-y-3">
@@ -260,7 +260,7 @@ const About = () => {
       </Section>
 
       {/* Who I Work With */}
-      <Section className="px-4 py-10 bg-secondary">
+      <Section className="py-10 px-4 bg-secondary">
         <div className="container-narrow mx-auto">
           <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-6">Who I Work With</h2>
           <div className="grid sm:grid-cols-2 gap-4">
@@ -284,7 +284,7 @@ const About = () => {
       </Section>
 
       {/* FAQ */}
-      <Section className="py-10 bg-secondary">
+      <Section className="py-10 px-4 bg-secondary">
         <div className="container-narrow mx-auto">
           <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-8 text-center">Frequently Asked Questions</h2>
           <Accordion type="single" collapsible className="space-y-3">
@@ -299,7 +299,7 @@ const About = () => {
       </Section>
 
       {/* CTA */}
-      <section className="py-10 bg-background relative overflow-hidden">
+      <section className="py-10 px-4 bg-background relative overflow-hidden">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] bg-primary/10 rounded-full blur-[100px] pointer-events-none" />
         <div className="container-narrow mx-auto text-center relative z-10">
           <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-4">Let's Work Together</h2>

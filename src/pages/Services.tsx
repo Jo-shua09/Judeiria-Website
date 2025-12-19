@@ -173,7 +173,7 @@ const Services = () => {
       ))}
 
       {/* Not Sure CTA */}
-      <section className="py-10 bg-secondary relative overflow-hidden">
+      <section className="py-10 px-4 bg-secondary relative overflow-hidden">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] bg-primary/10 rounded-full blur-[100px] pointer-events-none" />
         <div className="container-narrow mx-auto text-center relative z-10">
           <motion.div

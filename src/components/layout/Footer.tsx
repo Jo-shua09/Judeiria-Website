@@ -55,7 +55,7 @@ export function Footer() {
                 href="https://linkedin.com/in/jude-iria"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-2 bg-primary-foreground/10 rounded-full hover:bg-accent hover:text-accent-foreground transition-colors"
+                className="p-2 bg-background rounded-full hover:bg-accent hover:text-accent-foreground transition-colors"
                 aria-label="LinkedIn"
               >
                 <Linkedin size={20} />
@@ -64,7 +64,7 @@ export function Footer() {
                 href="https://x.com/CoachJude_XER"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-2 bg-primary-foreground/10 rounded-full hover:bg-accent hover:text-accent-foreground transition-colors"
+                className="p-2 bg-background rounded-full hover:bg-accent hover:text-accent-foreground transition-colors"
                 aria-label="X (Twitter)"
               >
                 <Twitter size={20} />
@@ -73,7 +73,7 @@ export function Footer() {
                 href="https://instagram.com/jude_iria"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-2 bg-primary-foreground/10 rounded-full hover:bg-accent hover:text-accent-foreground transition-colors"
+                className="p-2 bg-background rounded-full hover:bg-accent hover:text-accent-foreground transition-colors"
                 aria-label="Instagram"
               >
                 <Instagram size={20} />
@@ -82,7 +82,7 @@ export function Footer() {
                 href="https://facebook.com/JudeIria"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-2 bg-primary-foreground/10 rounded-full hover:bg-accent hover:text-accent-foreground transition-colors"
+                className="p-2 bg-background rounded-full hover:bg-accent hover:text-accent-foreground transition-colors"
                 aria-label="Facebook"
               >
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
@@ -93,7 +93,7 @@ export function Footer() {
                 href="https://www.tiktok.com/@jude_iria"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-2 bg-primary-foreground/10 rounded-full hover:bg-accent hover:text-accent-foreground transition-colors"
+                className="p-2 bg-background rounded-full hover:bg-accent hover:text-accent-foreground transition-colors"
                 aria-label="TikTok"
               >
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
@@ -104,7 +104,7 @@ export function Footer() {
                 href="https://www.youtube.com/@jude_iria"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-2 bg-primary-foreground/10 rounded-full hover:bg-accent hover:text-accent-foreground transition-colors"
+                className="p-2 bg-background rounded-full hover:bg-accent hover:text-accent-foreground transition-colors"
                 aria-label="YouTube"
               >
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
@@ -118,7 +118,7 @@ export function Footer() {
           <div className="md:col-span-2">
             <h4 className="font-heading text-lg font-semibold mb-4">Subscribe to our Newsletter</h4>
             <div className="flex flex-col space-y-2">
-              <Input type="email" placeholder="Enter your email" className="w-full border-2 text-white-foreground font-medium" />
+              <Input type="email" placeholder="Enter your email" className="w-full h-10 border-2 text-white-foreground font-medium" />
               <Button variant="hero" size="lg">
                 Subscribe
               </Button>
