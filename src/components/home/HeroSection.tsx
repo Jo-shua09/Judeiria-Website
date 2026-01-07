@@ -85,9 +85,9 @@ export function HeroSection() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 1, duration: 0.6 }}
-              className="flex items-center w-full gap-4"
+              className="flex items-center justify-center md:justify-start w-full overflow-hidden gap-4"
             >
-              <Button variant="hero" size="lg" asChild>
+              <Button variant="hero" size="sm" asChild>
                 <a
                   href="https://calendly.com/judeiria/business_consultation/judeiria/business_consultation"
                   target="_blank"
@@ -96,7 +96,7 @@ export function HeroSection() {
                   Book a Call
                 </a>
               </Button>
-              <Button variant="hero" size="lg" asChild className="bg-white/20 hover:bg-white/30 text-white">
+              <Button variant="hero" size="sm" asChild className="bg-white/20 hover:bg-white/30 text-white">
                 <a href="/services" target="_blank" rel="noopener noreferrer">
                   Explore Services
                 </a>
