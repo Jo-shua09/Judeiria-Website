@@ -75,7 +75,7 @@ export function Footer() {
         <div className="grid gap-10 justify-between grid-cols-2 sm:grid-cols-2 items-start md:grid-cols-3 lg:grid-cols-6">
           {/* Logo & Social */}
           <div className="col-span-2 w-full space-y-4">
-            <img loading="lazy" src={logoDark} alt="Jude Iria" className="w-28 h-12 border max-w-full object-contain" />
+            <img loading="lazy" src={logoDark} alt="Jude Iria" className="w-28 h-12 max-w-full object-contain" />
             <p className="font-normal text-base text-foreground mt-4">
               Business Consultant, Career Coach, and Brand & Growth Strategist helping people turn skills into income and confusion into clear
               direction.
