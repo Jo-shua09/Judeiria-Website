@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import judeHero from "@/assets/hero.jpg";
+import judeHero from "@/assets/face-cropped.jpg";
 
 const flagLinks = [
   "https://en.wikipedia.org/wiki/Flag_of_the_United_States",
