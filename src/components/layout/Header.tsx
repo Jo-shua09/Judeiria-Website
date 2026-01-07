@@ -65,7 +65,7 @@ export function Header() {
             exit={{ opacity: 0, height: 0 }}
             className="md:hidden min-h-screen bg-background border-b border-border"
           >
-            <div className="px-4 py-4 space-y-4 flex flex-col h-[85vh] justify-between">
+            <div className="px-4 py-4 space-y-4 flex flex-col h-[80vh] justify-between">
               <div className="h-full w-fit">
                 {navLinks.map((link) => (
                   <Link
