@@ -53,10 +53,8 @@ export function HeroSection() {
               transition={{ delay: 0.2, duration: 0.6 }}
               className="border bg-black my-6 text-center flex items-center gap-2 p-1 pr-6 md:mb-6 md:mx-0 mx-auto rounded-full w-fit "
             >
-              <span className="bg-primary text-background font-medium rounded-full px-2 py-1">New</span>
-              <span className="font-bold text-white leading-tight">
-                Instant credibility <span className="text-accent">+ Clarity.</span>
-              </span>
+              <span className="bg-primary text-background font-semibold rounded-full px-2 py-1">Instant credibility </span>
+              <span className="font-bold text-white leading-tight">+ Clarity</span>
             </motion.h1>
 
             <motion.p
