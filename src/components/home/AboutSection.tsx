@@ -13,7 +13,7 @@ export function AboutSection() {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section ref={ref} className="py-3 md:section-padding bg-background/10">
+    <section ref={ref} className="py-3 px-4 md:section-padding bg-background/10">
       <div className="container-wide mx-auto">
         <div className="max-w-3xl mx-auto text-center">
           <motion.h2

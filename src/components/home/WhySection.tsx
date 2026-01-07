@@ -8,7 +8,7 @@ export function WhySection() {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section ref={ref} className="py-6 md:section-padding bg-background">
+    <section ref={ref} className="py-6  px-4 md:section-padding bg-background">
       <div className="container-narrow mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
