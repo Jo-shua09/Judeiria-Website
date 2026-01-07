@@ -32,7 +32,8 @@ export function Footer() {
       { label: "YouTube", href: "https://www.youtube.com/@jude_iria" },
     ],
     "Affiliated Brands": [
-      { label: "Xfin Enterprises", href: "#" },
+      { label: "Xifin Enterprise", href: "https://xifinenterprise.com/" },
+      { label: "Eleazar Alliance", href: "https://eleazer-alliance.vercel.app/" },
       { label: "J.I Global Consultancy", href: "#" },
     ],
     FAQ: [
@@ -83,7 +84,7 @@ export function Footer() {
 
           {/* Footer Links */}
           {Object.entries(footerLinks).map(([title, links]) => (
-            <div key={title} className="w-fit md:ml-8 col-span-1">
+            <div key={title} className="w-full md:ml-8 col-span-1">
               <h4 className="font-semibold text-base mb-4">{title}</h4>
               <ul className="space-y-2">
                 {links.map((link) => (
