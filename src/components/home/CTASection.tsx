@@ -8,7 +8,7 @@ export function CTASection() {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section ref={ref} className="py-10 px-4 bg-secondary relative overflow-hidden">
+    <section ref={ref} className="py-10 px-4 bg-secondary max-w-6xl m-4 md:m-auto rounded-xl relative overflow-hidden">
       {/* Glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] bg-primary/10 rounded-full blur-[100px] pointer-events-none" />
 
@@ -19,12 +19,12 @@ export function CTASection() {
           <p className="text-lg md:text-xl text-primary font-semibold mb-4">Clarity comes before growth.</p>
 
           <p className="text-muted-foreground mb-8 max-w-xl mx-auto text-sm">
-            If you feel stuck, overwhelmed, or unsure — you don't have to figure it out alone.
+            If you feel stuck, overwhelmed, or unsure, you don't have to figure it out alone.
           </p>
 
           <Button variant="hero" size="lg" asChild className="group">
             <a href="https://calendly.com/judeiria/business_consultation" target="_blank" rel="noopener noreferrer">
-              Book a Clarity Session
+              Book a Call
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </a>
           </Button>

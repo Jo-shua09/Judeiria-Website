@@ -66,7 +66,7 @@ export function StatsSection() {
         </motion.div>
 
         {/* Stats Grid */}
-        <div className="grid md:grid-cols-3 gap-8 mb-16">
+        <div className="grid md:grid-cols-3 gap-4 mb-8">
           {stats.map((stat, i) => (
             <motion.div
               key={stat.label}

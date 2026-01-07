@@ -8,22 +8,22 @@ export function WhySection() {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section ref={ref} className="section-padding bg-background">
+    <section ref={ref} className="py-6 md:section-padding bg-background">
       <div className="container-narrow mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5 }}
-          className="text-center mb-8"
+          className="text-center mb-4"
         >
-          <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-4">Why people choose to work with me</h2>
+          <h2 className="text-2xl md:text-3xl font-bold text-foreground">Why people choose to work with me</h2>
         </motion.div>
 
         <motion.div
           initial={{ opacity: 0 }}
           animate={isInView ? { opacity: 1 } : {}}
           transition={{ duration: 0.5, delay: 0.1 }}
-          className="text-center space-y-2 mb-8"
+          className="text-center space-y-2 mb-4"
         >
           <p className="text-muted-foreground">A lot of people have ideas.</p>
           <p className="text-muted-foreground">A lot of people have skills.</p>
@@ -59,7 +59,7 @@ export function WhySection() {
             transition={{ duration: 0.5, delay: 0.5 }}
             className="text-center text-muted-foreground text-sm mt-6"
           >
-            Whether it's your business, career, or brand — I help you move forward with <span className="text-primary font-medium">structure</span>,{" "}
+            Whether it's your business, career, or brand, I help you move forward with <span className="text-primary font-medium">structure</span>,{" "}
             <span className="text-primary font-medium">confidence</span>, and <span className="text-primary font-medium">direction</span>.
           </motion.p>
         </motion.div>

@@ -94,7 +94,7 @@ const Contact = () => {
   return (
     <Layout>
       {/* Hero */}
-      <section className="section-padding bg-secondary pt-24">
+      <section className="section-padding bg-secondary pt-12 md:pt-24">
         <div className="container-narrow mx-auto text-center">
           <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4">Get In Touch</h1>
@@ -199,14 +199,14 @@ const Contact = () => {
       </Section>
 
       {/* CTA */}
-      <section className="py-10 px-4 bg-background relative overflow-hidden">
+      <section className="py-10 px-4 max-w-6xl m-4 rounded-xl md:m-auto bg-background relative overflow-hidden">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] bg-primary/10 rounded-full blur-[100px] pointer-events-none" />
         <div className="container-narrow mx-auto text-center relative z-10">
           <h2 className="text-xl md:text-2xl font-bold text-foreground mb-3">Prefer to talk directly?</h2>
           <p className="text-sm text-muted-foreground mb-6">Book a clarity session and let's figure out your next step together.</p>
           <Button variant="hero" size="lg" asChild className="group">
             <a href="https://calendly.com/judeiria/business_consultation" target="_blank" rel="noopener noreferrer">
-              Book a Clarity Session
+              Book a Call
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </a>
           </Button>

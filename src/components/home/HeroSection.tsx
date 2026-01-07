@@ -26,7 +26,7 @@ const flagImages = [
 
 export function HeroSection() {
   return (
-    <section className="relative min-h-[90vh] flex items-center bg-background/70 overflow-hidden py-6">
+    <section className="relative min-h-[90vh] flex items-center bg-background/70 overflow-hidden pt-6 pb-0 md:py-6">
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-[0.03]">
         <div
@@ -62,7 +62,7 @@ export function HeroSection() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4, duration: 0.6 }}
-              className="text-lg md:text-xl text-white mb-6 leading-relaxed"
+              className="text-base md:text-xl text-white mb-6 leading-relaxed"
             >
               I'm <span className="text-white font-semibold">Jude Iria</span>, a Business Consultant, Career Coach, and Brand & Growth Strategist
               helping people turn skills into income, brands into businesses, and confusion into clear direction.
@@ -75,7 +75,7 @@ export function HeroSection() {
                 <motion.div className="flex gap-4" animate={{ x: ["0%", "-50%"] }} transition={{ duration: 20, ease: "linear", repeat: Infinity }}>
                   {[...flagImages, ...flagImages].map((image, i) => (
                     <a key={i} href={flagLinks[i % flagImages.length]} target="_blank" rel="noopener noreferrer" className="flex-shrink-0">
-                      <img loading="lazy" src={image} alt={`Flag ${(i % flagImages.length) + 1}`} className="h-8 w-auto rounded" />
+                      <img loading="lazy" src={image} alt={`Flag ${(i % flagImages.length) + 1}`} className="md:h-8 h-6 w-auto rounded" />
                     </a>
                   ))}
                 </motion.div>
@@ -89,7 +89,7 @@ export function HeroSection() {
               transition={{ delay: 1, duration: 0.6 }}
               className="flex flex-col sm:flex-row gap-4"
             >
-              <Button variant="hero" size="xl" asChild>
+              <Button variant="hero" size="lg" asChild>
                 <a
                   href="https://calendly.com/judeiria/business_consultation/judeiria/business_consultation"
                   target="_blank"

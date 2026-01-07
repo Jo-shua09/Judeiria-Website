@@ -1,133 +1,121 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
-import { Linkedin, Twitter, Instagram } from "lucide-react";
 import logoDark from "@/assets/logo.png";
-import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 
 export function Footer() {
+  const [email, setEmail] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleSubscribe = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    // Simulate subscription logic
+    await new Promise((resolve) => setTimeout(resolve, 1000));
+    setIsSubmitting(false);
+    setEmail("");
+    alert("Subscribed successfully!");
+  };
+
+  const footerLinks = {
+    // "Quick Links": [
+    //   { label: "Home", href: "/" },
+    //   { label: "About", href: "/about" },
+    //   { label: "Services", href: "/services" },
+    //   { label: "Contact", href: "/contact" },
+    // ],
+
+    "Social Media": [
+      { label: "LinkedIn", href: "https://linkedin.com/in/jude-iria" },
+      { label: "Twitter", href: "https://x.com/CoachJude_XER" },
+      { label: "Instagram", href: "https://instagram.com/jude_iria" },
+      { label: "Facebook", href: "https://facebook.com/JudeIria" },
+      { label: "YouTube", href: "https://www.youtube.com/@jude_iria" },
+    ],
+    Services: [
+      { label: "Business Consulting", href: "/services#consulting" },
+      { label: "Career Coaching", href: "/services#coaching" },
+      { label: "Brand & Social Strategy", href: "/services#strategy" },
+    ],
+    About: [
+      { label: "Who I Am", href: "/about" },
+      { label: "Experience & Perspective", href: "/about" },
+      { label: "What I Believe", href: "/about" },
+    ],
+    FAQ: [
+      { label: "Frequently Asked Questions", href: "/about#faq" },
+      { label: "Support", href: "/contact" },
+      { label: "Contact Us", href: "/contact" },
+    ],
+  };
+
   return (
-    <footer className="bg-secondary border-t border-border">
-      <div className="mx-auto px-4 md:px-10 py-10">
-        <div className="grid grid-cols-1 md:grid-cols-4 lg:grid-cols-6 gap-12">
-          {/* Brand */}
-          <div className="md:col-span-2">
-            <Link to="/" className="flex items-center w-fit">
-              <img loading="lazy" src={logoDark} alt="Jude Iria" className="w-[10rem] rounded-full object-contain" />
-            </Link>
-            <p className=" text-white-foreground/80 max-w-sm leading-relaxed">
+    <footer className="bg-background/95 w-full overflow-hidden">
+      {/* Newsletter */}
+      <div className="border-b border-secondary md:px-8 px-4">
+        <div className="container-custom py-6">
+          <div className="flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
+            <div className="text-center lg:text-left">
+              <h3 className="text-xl font-semibold">Join our Newsletter</h3>
+              <p className="text-sm max-w-md mx-auto lg:mx-0">Be the first to receive updates when they roll out.</p>
+            </div>
+
+            <form onSubmit={handleSubscribe} className="flex flex-col sm:flex-row w-full max-w-xl gap-3">
+              <input
+                type="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                placeholder="Your email address"
+                className="w-full bg-white/10 border border-white/20 rounded-full px-5 py-3 text-sm text-white placeholder:text-white/40 focus:outline-none focus:ring-2 focus:ring-primary"
+              />
+              <Button type="submit" size="lg" variant="hero" className="w-full sm:w-auto" disabled={isSubmitting}>
+                {isSubmitting ? "Subscribing..." : "Subscribe"}
+              </Button>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      {/* Main Footer */}
+      <div className="container-custom pt-4 pb-12 px-4 md:px-8">
+        <div className="grid gap-10 justify-between grid-cols-1 sm:grid-cols-2 items-start md:grid-cols-3 lg:grid-cols-6">
+          {/* Logo & Social */}
+          <div className="lg:col-span-2 w-full space-y-4">
+            <img loading="lazy" src={logoDark} alt="Jude Iria" className="w-28 h-fit max-w-full object-contain" />
+            <p className="font-normal text-base text-foreground mt-4">
               Business Consultant, Career Coach, and Brand & Growth Strategist helping people turn skills into income and confusion into clear
               direction.
             </p>
           </div>
 
-          {/* Quick Links */}
-          <div>
-            <h4 className="font-heading text-lg font-semibold mb-4">Quick Links</h4>
-            <ul className="space-y-3">
-              <li>
-                <Link to="/" className=" text-white-foreground/80 hover:text-accent transition-colors">
-                  Home
-                </Link>
-              </li>
-              <li>
-                <Link to="/about" className=" text-white-foreground/80 hover:text-accent transition-colors">
-                  About
-                </Link>
-              </li>
-              <li>
-                <Link to="/services" className=" text-white-foreground/80 hover:text-accent transition-colors">
-                  Services
-                </Link>
-              </li>
-              <li>
-                <Link to="/contact" className=" text-white-foreground/80 hover:text-accent transition-colors">
-                  Contact
-                </Link>
-              </li>
-            </ul>
-          </div>
-
-          {/* Connect */}
-          <div>
-            <h4 className="font-heading text-lg font-semibold mb-4">Connect</h4>
-            <div className="grid grid-cols-4 md:grid-cols-3 w-fit gap-4">
-              <a
-                href="https://linkedin.com/in/jude-iria"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-2 bg-background rounded-full hover:bg-accent hover:text-accent-foreground transition-colors"
-                aria-label="LinkedIn"
-              >
-                <Linkedin size={20} />
-              </a>
-              <a
-                href="https://x.com/CoachJude_XER"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-2 bg-background rounded-full hover:bg-accent hover:text-accent-foreground transition-colors"
-                aria-label="X (Twitter)"
-              >
-                <Twitter size={20} />
-              </a>
-              <a
-                href="https://instagram.com/jude_iria"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-2 bg-background rounded-full hover:bg-accent hover:text-accent-foreground transition-colors"
-                aria-label="Instagram"
-              >
-                <Instagram size={20} />
-              </a>
-              <a
-                href="https://facebook.com/JudeIria"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-2 bg-background rounded-full hover:bg-accent hover:text-accent-foreground transition-colors"
-                aria-label="Facebook"
-              >
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
-                </svg>
-              </a>
-              <a
-                href="https://www.tiktok.com/@jude_iria"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-2 bg-background rounded-full hover:bg-accent hover:text-accent-foreground transition-colors"
-                aria-label="TikTok"
-              >
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z" />
-                </svg>
-              </a>
-              <a
-                href="https://www.youtube.com/@jude_iria"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-2 bg-background rounded-full hover:bg-accent hover:text-accent-foreground transition-colors"
-                aria-label="YouTube"
-              >
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
-                </svg>
-              </a>
+          {/* Footer Links */}
+          {Object.entries(footerLinks).map(([title, links]) => (
+            <div key={title} className="w-fit  md:ml-8 col-span-1">
+              <h4 className="font-semibold text-base mb-4">{title}</h4>
+              <ul className="space-y-2">
+                {links.map((link) => (
+                  <li key={link.label}>
+                    {link.href.startsWith("http") ? (
+                      <a href={link.href} target="_blank" rel="noopener noreferrer" className="text-sm hover:text-primary transition-colors">
+                        {link.label}
+                      </a>
+                    ) : (
+                      <Link to={link.href} className="text-sm hover:text-primary transition-colors">
+                        {link.label}
+                      </Link>
+                    )}
+                  </li>
+                ))}
+              </ul>
             </div>
-          </div>
-
-          {/* Newsletter */}
-          <div className="md:col-span-2">
-            <h4 className="font-heading text-lg font-semibold mb-4">Subscribe to our Newsletter</h4>
-            <div className="flex flex-col space-y-2">
-              <Input type="email" placeholder="Enter your email" className="w-full h-10 border-2 text-white-foreground font-medium" />
-              <Button variant="hero" size="lg">
-                Subscribe
-              </Button>
-            </div>
-          </div>
+          ))}
         </div>
+      </div>
 
-        <div className="border-t border-primary-foreground/20 mt-12 pt-8 text-center  text-white-foreground/60 text-sm">
-          <p>© {new Date().getFullYear()} Jude Iria. All rights reserved.</p>
+      {/* Copyright */}
+      <div className="border-t border-secondary">
+        <div className="container-custom py-4 text-center">
+          <p className="text-xs">© {new Date().getFullYear()} Jude Iria. All rights reserved.</p>
         </div>
       </div>
     </footer>

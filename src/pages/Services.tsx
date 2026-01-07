@@ -27,14 +27,14 @@ function ServiceSection({ id, icon, title, description, includes, outcomes, ctaT
       initial={{ opacity: 0, y: 50 }}
       animate={isInView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.6 }}
-      className={`px-4 md:px-12 py-16 ${reverse ? "bg-secondary" : "bg-background"}`}
+      className={`px-4 md:px-12 py-8 md:py-12 ${reverse ? "bg-secondary" : "bg-background"}`}
     >
       <div className="container-wide mx-auto ">
-        <div className={`grid px-2 grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start ${reverse ? "lg:flex-row-reverse" : ""}`}>
+        <div className={`grid px-2 grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-16 items-start ${reverse ? "lg:flex-row-reverse" : ""}`}>
           <div className={reverse ? "lg:order-2" : ""}>
             <div className="w-16 h-16 bg-accent/10 rounded-2xl flex items-center justify-center mb-6">{icon}</div>
-            <h2 className="font-heading text-3xl md:text-4xl font-bold  text-white mb-6">{title}</h2>
-            <p className="text-lg  text-white leading-relaxed">{description}</p>
+            <h2 className="font-heading text-2xl md:text-4xl font-bold  text-white mb-3">{title}</h2>
+            <p className="md:text-lg  text-base text-white leading-relaxed">{description}</p>
           </div>
 
           <div className={`space-y-6 ${reverse ? "lg:order-1" : ""}`}>
@@ -50,9 +50,9 @@ function ServiceSection({ id, icon, title, description, includes, outcomes, ctaT
               </ul>
             </div>
 
-            <div className="bg-accent/10 rounded-xl p-8">
-              <h3 className="font-heading text-xl font-semibold  text-white mb-6">What you walk away with:</h3>
-              <ul className="space-y-4">
+            <div className="bg-accent/10 rounded-xl p-4">
+              <h3 className="font-heading text-xl font-semibold  text-white mb-3">What you walk away with:</h3>
+              <ul className="space-y-2">
                 {outcomes.map((item, i) => (
                   <li key={i} className="flex items-start gap-3">
                     <div className="w-2 h-2 rounded-full bg-accent mt-2 flex-shrink-0" />
@@ -91,7 +91,7 @@ const services = [
       "Helping you decide what to focus on now   and what can wait",
     ],
     outcomes: ["Clear direction for your business", "Better structure and systems", "Confidence in your next move"],
-    ctaText: "Book a Business Consulting Session",
+    ctaText: "Book a Call",
     ctaLink: "https://calendly.com/judeiria/business_consultation/judeiria/business_consultation",
   },
   {
@@ -108,7 +108,7 @@ const services = [
       "Improving how you present yourself professionally, especially on LinkedIn",
     ],
     outcomes: ["Confidence in your direction", "A clear plan aligned with your strengths", "Better professional positioning"],
-    ctaText: "Book a Career Clarity Call",
+    ctaText: "Book a Call",
     ctaLink: "https://calendly.com/judeiria/business_consultation/judeiria/business_consultation",
     reverse: true,
   },
@@ -126,7 +126,7 @@ const services = [
       "Social media strategy and management, where needed",
     ],
     outcomes: ["A clear, professional presence", "Consistent brand messaging", "Attraction of the right conversations and opportunities"],
-    ctaText: "Book a Brand Strategy Session",
+    ctaText: "Book a Call",
     ctaLink: "https://calendly.com/judeiria/business_consultation/judeiria/business_consultation",
   },
 ];
@@ -138,7 +138,7 @@ const Services = () => {
   return (
     <Layout>
       {/* Hero */}
-      <section ref={heroRef} className="section-padding bg-secondary pt-24">
+      <section ref={heroRef} className="section-padding bg-secondary pt-12 md:pt-24">
         <div className="container-narrow mx-auto text-center">
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
@@ -152,7 +152,7 @@ const Services = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={heroInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="text-muted-foreground max-w-2xl mx-auto leading-relaxed"
+            className="text-muted-foreground max-w-2xl mx-auto md:text-lg text-base leading-relaxed"
           >
             Whether you're starting something new or refining what you've built, I help you focus on what matters and move with intention.
           </motion.p>
@@ -173,7 +173,7 @@ const Services = () => {
       ))}
 
       {/* Not Sure CTA */}
-      <section className="py-10 px-4 bg-secondary relative overflow-hidden">
+      <section className="py-10 px-4 max-w-6xl m-4 rounded-xl md:m-auto bg-background relative overflow-hidden">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] bg-primary/10 rounded-full blur-[100px] pointer-events-none" />
         <div className="container-narrow mx-auto text-center relative z-10">
           <motion.div
@@ -189,7 +189,7 @@ const Services = () => {
             </p>
             <Button variant="hero" size="lg" asChild className="group">
               <a href="https://calendly.com/judeiria/business_consultation" target="_blank" rel="noopener noreferrer">
-                Book a Clarity Call
+                Book a Call
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </a>
             </Button>
