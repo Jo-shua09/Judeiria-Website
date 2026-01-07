@@ -4,7 +4,7 @@ import { Layout } from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { ArrowRight, Check } from "lucide-react";
-import judeAbout from "@/assets/about.jpg";
+import judeAbout from "@/assets/hero.jpg";
 
 const stats = [
   { value: 100, suffix: "+", label: "Brands & businesses supported" },
