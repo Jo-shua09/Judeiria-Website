@@ -38,7 +38,7 @@ export function HeroSection() {
         />
       </div>
 
-      <div className="px-4 md:px-12 mx-auto">
+      <div className="px-4 md:px-12 mx-auto z-10">
         <div className="flex lg:flex-nowrap justify-center md:py-16 py-0 flex-wrap gap-16 lg:gap-20 items-center">
           {/* Content */}
           <motion.div
@@ -56,7 +56,6 @@ export function HeroSection() {
               <span className="bg-primary text-background font-semibold rounded-full px-2 py-1">Instant credibility </span>
               <span className="font-bold text-white leading-tight">+ Clarity</span>
             </motion.h1>
-
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -86,15 +85,20 @@ export function HeroSection() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 1, duration: 0.6 }}
-              className="flex flex-col sm:flex-row gap-4"
+              className="flex items-center w-full gap-4"
             >
-              <Button variant="hero" size="sm" asChild>
+              <Button variant="hero" size="lg" asChild>
                 <a
                   href="https://calendly.com/judeiria/business_consultation/judeiria/business_consultation"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
                   Book a Call
+                </a>
+              </Button>
+              <Button variant="hero" size="lg" asChild className="bg-white/20 hover:bg-white/30 text-white">
+                <a href="/services" target="_blank" rel="noopener noreferrer">
+                  Explore Services
                 </a>
               </Button>
             </motion.div>

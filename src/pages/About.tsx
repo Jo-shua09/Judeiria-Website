@@ -4,7 +4,7 @@ import { Layout } from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { ArrowRight, Check } from "lucide-react";
-import judeAbout from "@/assets/jude-cropped.jpg";
+import judeAbout from "@/assets/face-cropped.jpg";
 
 const stats = [
   { value: 100, suffix: "+", label: "Brands & businesses supported" },
@@ -110,7 +110,7 @@ const About = () => {
   return (
     <Layout>
       {/* Hero */}
-      <section className="md:px-10 pt-12 px-4 bg-background">
+      <section className="md:px-10 md:pt-0 pt-12 px-4 bg-background">
         <div className="mx-auto">
           <div className="grid lg:grid-cols-2 grid-cols-1 gap-6 lg:gap-20 items-center">
             <motion.div initial={{ opacity: 0, x: -30 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.5 }}>
