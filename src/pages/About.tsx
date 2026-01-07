@@ -4,7 +4,7 @@ import { Layout } from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { ArrowRight, Check } from "lucide-react";
-import judeAbout from "@/assets/face-cropped.jpg";
+import judeAbout from "@/assets/about.jpg";
 
 const stats = [
   { value: 100, suffix: "+", label: "Brands & businesses supported" },
@@ -138,7 +138,7 @@ const About = () => {
                 loading="lazy"
                 src={judeAbout}
                 alt="Jude Iria"
-                className="relative rounded-2xl shadow-2xl w-full max-w-md mx-auto lg:max-w-none object-cover aspect-[1/1]"
+                className="relative rounded-2xl shadow-2xl w-full max-w-md mx-auto lg:max-w-none object-cover aspect-[4/5] md:aspect-[1/1]"
               />
             </motion.div>
           </div>
