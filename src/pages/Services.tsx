@@ -184,7 +184,7 @@ const Services = () => {
           >
             <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-4">Not Sure What You Need Yet?</h2>
             <p className="text-muted-foreground mb-6 max-w-xl mx-auto text-sm">
-              That's completely normal. Most people don't come in knowing what they need—they just know something feels off. We'll figure it out
+              That's completely normal. Most people don't come in knowing what they need,they just know something feels off. We'll figure it out
               together.
             </p>
             <Button variant="hero" size="lg" asChild className="group">

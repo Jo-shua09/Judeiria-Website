@@ -85,13 +85,14 @@ function AnimatedCounter({ value, prefix = "", suffix = "", isInView }: { value:
   );
 }
 
-function Section({ children, className = "" }: { children: React.ReactNode; className?: string }) {
+function Section({ children, className = "", id }: { children: React.ReactNode; className?: string; id?: string }) {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
     <motion.section
       ref={ref}
+      id={id}
       initial={{ opacity: 0, y: 30 }}
       animate={isInView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.6 }}
@@ -120,7 +121,7 @@ const About = () => {
               </p>
               <p className=" text-muted-foreground leading-relaxed mb-4">
                 At my core, I help people make sense of growth. Over the years, I've worked with founders, professionals, and personal brands who were
-                talented, driven, and ambitious—but stuck.
+                talented, driven, and ambitious, but stuck.
               </p>
               <p className="text-primary font-medium">My work is about simplifying that journey and helping people build with intention.</p>
             </motion.div>
@@ -149,7 +150,7 @@ const About = () => {
         <div className="container-narrow mx-auto">
           <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-6">How My Work Started</h2>
           <div className="space-y-4 text-muted-foreground leading-relaxed">
-            <p>I didn't start out trying to "do everything." I started by solving problems—first for myself, then for others.</p>
+            <p>I didn't start out trying to "do everything." I started by solving problems,first for myself, then for others.</p>
             <p className="text-lg text-foreground font-semibold py-2">
               Most people struggle not because they aren't capable, but because they don't know what to focus on.
             </p>
@@ -286,7 +287,7 @@ const About = () => {
       </Section>
 
       {/* FAQ */}
-      <Section className="pb-10 px-4 bg-secondary">
+      <Section className="pb-10 px-4 bg-secondary" id="faq">
         <div className="container-narrow mx-auto">
           <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-8 text-center">Frequently Asked Questions</h2>
           <Accordion type="single" collapsible className="space-y-3">

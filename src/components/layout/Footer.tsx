@@ -18,13 +18,12 @@ export function Footer() {
   };
 
   const footerLinks = {
-    // "Quick Links": [
-    //   { label: "Home", href: "/" },
-    //   { label: "About", href: "/about" },
-    //   { label: "Services", href: "/services" },
-    //   { label: "Contact", href: "/contact" },
-    // ],
-
+    "Quick Links": [
+      { label: "Home", href: "/" },
+      { label: "About", href: "/about" },
+      { label: "Services", href: "/services" },
+      { label: "Contact Us", href: "/contact" },
+    ],
     "Social Media": [
       { label: "LinkedIn", href: "https://linkedin.com/in/jude-iria" },
       { label: "Twitter", href: "https://x.com/CoachJude_XER" },
@@ -32,15 +31,9 @@ export function Footer() {
       { label: "Facebook", href: "https://facebook.com/JudeIria" },
       { label: "YouTube", href: "https://www.youtube.com/@jude_iria" },
     ],
-    Services: [
-      { label: "Business Consulting", href: "/services#consulting" },
-      { label: "Career Coaching", href: "/services#coaching" },
-      { label: "Brand & Social Strategy", href: "/services#strategy" },
-    ],
-    About: [
-      { label: "Who I Am", href: "/about" },
-      { label: "Experience & Perspective", href: "/about" },
-      { label: "What I Believe", href: "/about" },
+    "Affiliated Brands": [
+      { label: "Xfin Enterprises", href: "#" },
+      { label: "J.I Global Consultancy", href: "#" },
     ],
     FAQ: [
       { label: "Frequently Asked Questions", href: "/about#faq" },
@@ -50,7 +43,7 @@ export function Footer() {
   };
 
   return (
-    <footer className="bg-background/95 w-full overflow-hidden">
+    <footer className="bg-background/95 w-full overflow-hidden mt-8 md:mt-12">
       {/* Newsletter */}
       <div className="border-b border-secondary md:px-8 px-4">
         <div className="container-custom py-6">
@@ -78,9 +71,9 @@ export function Footer() {
 
       {/* Main Footer */}
       <div className="container-custom pt-4 pb-12 px-4 md:px-8">
-        <div className="grid gap-10 justify-between grid-cols-1 sm:grid-cols-2 items-start md:grid-cols-3 lg:grid-cols-6">
+        <div className="grid gap-10 justify-between grid-cols-2 sm:grid-cols-2 items-start md:grid-cols-3 lg:grid-cols-6">
           {/* Logo & Social */}
-          <div className="lg:col-span-2 w-full space-y-4">
+          <div className="col-span-2 w-full space-y-4">
             <img loading="lazy" src={logoDark} alt="Jude Iria" className="w-28 h-fit max-w-full object-contain" />
             <p className="font-normal text-base text-foreground mt-4">
               Business Consultant, Career Coach, and Brand & Growth Strategist helping people turn skills into income and confusion into clear
@@ -90,7 +83,7 @@ export function Footer() {
 
           {/* Footer Links */}
           {Object.entries(footerLinks).map(([title, links]) => (
-            <div key={title} className="w-fit  md:ml-8 col-span-1">
+            <div key={title} className="w-fit md:ml-8 col-span-1">
               <h4 className="font-semibold text-base mb-4">{title}</h4>
               <ul className="space-y-2">
                 {links.map((link) => (

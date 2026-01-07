@@ -51,8 +51,9 @@ export function HeroSection() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2, duration: 0.6 }}
-              className="border bg-black my-6 text-center p-1 px-6 md:mb-6 md:mx-0 mx-auto rounded-full w-fit "
+              className="border bg-black my-6 text-center flex items-center gap-2 p-1 pr-6 md:mb-6 md:mx-0 mx-auto rounded-full w-fit "
             >
+              <span className="bg-primary text-background font-medium rounded-full px-2 py-1">New</span>
               <span className="font-bold text-white leading-tight">
                 Instant credibility <span className="text-accent">+ Clarity.</span>
               </span>
@@ -89,13 +90,13 @@ export function HeroSection() {
               transition={{ delay: 1, duration: 0.6 }}
               className="flex flex-col sm:flex-row gap-4"
             >
-              <Button variant="hero" size="lg" asChild>
+              <Button variant="hero" size="sm" asChild>
                 <a
                   href="https://calendly.com/judeiria/business_consultation/judeiria/business_consultation"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  Book a Clarity Session
+                  Book a Call
                 </a>
               </Button>
             </motion.div>
