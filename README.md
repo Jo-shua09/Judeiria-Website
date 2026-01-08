@@ -106,5 +106,5 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 Jude Iria - Business Consultant, Career Coach & Brand Strategist
 
-- Website: [https://judeiria.vercel.app](https://judeiria.vercel.app)
+- Website: [https://judeiria.com](https://judeiria.com)
 - Calendly: [Book a Clarity Session](https://calendly.com/judeiria/business_consultation/)
