@@ -28,7 +28,7 @@ export function Footer() {
       { label: "Twitter", href: "https://x.com/CoachJude_XER" },
       { label: "Instagram", href: "https://instagram.com/jude_iria" },
       { label: "Facebook", href: "https://facebook.com/JudeIria" },
-      { label: "YouTube", href: "https://www.youtube.com/@jude_iria" },
+      { label: "YouTube", href: "https://youtube.com/@judeiria?si=4W7lhzgGc7eyWuyh" },
     ],
     "Affiliated Brands": [
       { label: "Xifin Enterprise", href: "https://xifinenterprise.com/" },
