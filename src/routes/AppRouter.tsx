@@ -13,9 +13,7 @@ const ScrollToTop = () => {
   const { pathname } = useLocation();
   const scrollToTop = useScrollToTop();
 
-  useEffect(() => {
-    scrollToTop();
-  }, [pathname, scrollToTop]);
+  useEffect(() => scrollToTop(), [pathname, scrollToTop]);
 
   return null;
 };
