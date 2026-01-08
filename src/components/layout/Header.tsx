@@ -43,7 +43,7 @@ export function Header() {
           {/* CTA Button */}
           <div className="hidden md:block">
             <Button variant="hero" size="lg" asChild>
-              <a href="https://calendly.com/judeiria/business_consultation/judeiria/business_consultation" target="_blank" rel="noopener noreferrer">
+              <a href="https://calendly.com/judeiria/business_consultation/" target="_blank" rel="noopener noreferrer">
                 Book a Clarity Session
               </a>
             </Button>
@@ -83,11 +83,7 @@ export function Header() {
 
               <div className="flex h-full justify-end w-full flex-col">
                 <Button variant="hero" className="w-full" asChild>
-                  <a
-                    href="https://calendly.com/judeiria/business_consultation/judeiria/business_consultation"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
+                  <a href="https://calendly.com/judeiria/business_consultation/" target="_blank" rel="noopener noreferrer">
                     Book a Clarity Session
                   </a>
                 </Button>
