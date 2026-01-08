@@ -1,5 +1,7 @@
 import { createRoot } from "react-dom/client";
-import { HelmetProvider } from "react-helmet-async";
+import * as HelmetPkg from "react-helmet-async";
+const { HelmetProvider } = HelmetPkg;
+
 import App from "./App";
 import "./index.css";
 

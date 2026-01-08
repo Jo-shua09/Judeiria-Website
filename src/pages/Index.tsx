@@ -1,4 +1,6 @@
-import { Helmet } from "react-helmet-async";
+import * as HelmetPkg from "react-helmet-async";
+const { Helmet } = HelmetPkg;
+
 import { Layout } from "@/components/layout/Layout";
 import { HeroSection } from "@/components/home/HeroSection";
 import { AboutSection } from "@/components/home/AboutSection";

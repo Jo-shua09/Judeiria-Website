@@ -1,4 +1,6 @@
-import { Helmet } from "react-helmet-async";
+import * as HelmetPkg from "react-helmet-async";
+const { Helmet } = HelmetPkg;
+
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { Layout } from "@/components/layout/Layout";

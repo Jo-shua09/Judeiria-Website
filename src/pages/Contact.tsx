@@ -9,7 +9,8 @@ import { Label } from "@/components/ui/label";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Mail, Phone, MapPin, Clock, Send, ArrowRight } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
-import { Helmet } from "react-helmet-async";
+import * as HelmetPkg from "react-helmet-async";
+const { Helmet } = HelmetPkg;
 
 const contactInfo = [
   {
