@@ -88,16 +88,12 @@ export function HeroSection() {
               className="flex items-center justify-center md:justify-start w-full overflow-hidden gap-4"
             >
               <Button variant="hero" size="sm" asChild>
-                <a
-                  href="https://calendly.com/judeiria/business_consultation/judeiria/business_consultation"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
+                <a href="https://calendly.com/judeiria/business_consultation/" target="_blank" rel="noopener noreferrer">
                   Book a Call
                 </a>
               </Button>
               <Button variant="hero" size="sm" asChild className="bg-white/20 hover:bg-white/30 text-white">
-                <a href="/services" target="_blank" rel="noopener noreferrer">
+                <a href="/services" rel="noopener noreferrer">
                   Explore Services
                 </a>
               </Button>

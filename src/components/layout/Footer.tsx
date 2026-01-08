@@ -5,34 +5,15 @@ import { Button } from "@/components/ui/button";
 
 export function Footer() {
   const [email, setEmail] = useState("");
-  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleSubscribe = async (e: React.FormEvent) => {
+  const handleSubscribe = (e: React.FormEvent) => {
     e.preventDefault();
-    setIsSubmitting(true);
-    try {
-      const response = await fetch(
-        "https://cbae06e5.sibforms.com/serve/MUIFAFgZtY6f6pJ6jYQEg3KCg4H52e9gDc3W4SVFCtxVwkA8ygIFkXE7bpSoWbdzxwM8LHGAckIJfGVuHYebHF4dhKQGtOnbEqgUiuVoXbvOOL5Or6fpFHyn8ZWg1pk6TEkQpSpQkiZAJuhvieKpVc1y57mYVEEFA1ppx-136igSsjhxVC0NGy4vVQ9A9mPPCygMqeoTUpFMJo0M",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/x-www-form-urlencoded",
-          },
-          body: new URLSearchParams({
-            EMAIL: email,
-          }),
-        }
-      );
-      if (response.ok) {
-        setEmail("");
-        alert("Subscribed successfully!");
-      } else {
-        alert("Subscription failed. Please try again.");
-      }
-    } catch (error) {
-      alert("An error occurred. Please try again.");
-    }
-    setIsSubmitting(false);
+    if (!email.trim()) return;
+    window.open(
+      "https://cbae06e5.sibforms.com/serve/MUIFAFgZtY6f6pJ6jYQEg3KCg4H52e9gDc3W4SVFCtxVwkA8ygIFkXE7bpSoWbdzxwM8LHGAckIJfGVuHYebHF4dhKQGtOnbEqgUiuVoXbvOOL5Or6fpFHyn8ZWg1pk6TEkQpSpQkiZAJuhvieKpVc1y57mYVEEFA1ppx-136igSsjhxVC0NGy4vVQ9A9mPPCygMqeoTUpFMJo0M",
+      "_blank"
+    );
+    setEmail("");
   };
 
   const footerLinks = {
@@ -47,7 +28,7 @@ export function Footer() {
       { label: "Twitter", href: "https://x.com/CoachJude_XER" },
       { label: "Instagram", href: "https://instagram.com/jude_iria" },
       { label: "Facebook", href: "https://facebook.com/JudeIria" },
-      { label: "YouTube", href: "https://youtube.com/@judeiria?si=4W7lhzgGc7eyWuyh" },
+      { label: "YouTube", href: "https://www.youtube.com/@jude_iria" },
     ],
     "Affiliated Brands": [
       { label: "Xifin Enterprise", href: "https://xifinenterprise.com/" },
@@ -72,17 +53,13 @@ export function Footer() {
               <p className="text-sm max-w-md mx-auto lg:mx-0">Be the first to receive updates when they roll out.</p>
             </div>
 
-            <form
-              action="https://cbae06e5.sibforms.com/serve/MUIFAFgZtY6f6pJ6jYQEg3KCg4H52e9gDc3W4SVFCtxVwkA8ygIFkXE7bpSoWbdzxwM8LHGAckIJfGVuHYebHF4dhKQGtOnbEqgUiuVoXbvOOL5Or6fpFHyn8ZWg1pk6TEkQpSpQkiZAJuhvieKpVc1y57mYVEEFA1ppx-136igSsjhxVC0NGy4vVQ9A9mPPCygMqeoTUpFMJo0M"
-              method="POST"
-              className="flex flex-col sm:flex-row w-full max-w-xl gap-3"
-            >
+            <form onSubmit={handleSubscribe} className="flex flex-col sm:flex-row w-full max-w-xl gap-3">
               <input
                 type="email"
-                name="EMAIL"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
                 placeholder="Your email address"
                 className="w-full bg-white/10 border border-white/20 rounded-full px-5 py-3 text-sm text-white placeholder:text-white/40 focus:outline-none focus:ring-2 focus:ring-primary"
-                required
               />
               <Button type="submit" size="lg" variant="hero" className="w-full sm:w-auto">
                 Subscribe

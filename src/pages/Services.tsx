@@ -92,7 +92,7 @@ const services = [
     ],
     outcomes: ["Clear direction for your business", "Better structure and systems", "Confidence in your next move"],
     ctaText: "Book a Call",
-    ctaLink: "https://calendly.com/judeiria/business_consultation/judeiria/business_consultation",
+    ctaLink: "https://calendly.com/judeiria/business_consultation/",
   },
   {
     id: "coaching",
@@ -109,7 +109,7 @@ const services = [
     ],
     outcomes: ["Confidence in your direction", "A clear plan aligned with your strengths", "Better professional positioning"],
     ctaText: "Book a Call",
-    ctaLink: "https://calendly.com/judeiria/business_consultation/judeiria/business_consultation",
+    ctaLink: "https://calendly.com/judeiria/business_consultation/",
     reverse: true,
   },
   {
@@ -127,7 +127,7 @@ const services = [
     ],
     outcomes: ["A clear, professional presence", "Consistent brand messaging", "Attraction of the right conversations and opportunities"],
     ctaText: "Book a Call",
-    ctaLink: "https://calendly.com/judeiria/business_consultation/judeiria/business_consultation",
+    ctaLink: "https://calendly.com/judeiria/business_consultation/",
   },
 ];
 
