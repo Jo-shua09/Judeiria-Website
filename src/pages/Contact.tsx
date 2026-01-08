@@ -9,6 +9,7 @@ import { Label } from "@/components/ui/label";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Mail, Phone, MapPin, Clock, Send, ArrowRight } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
+import { Helmet } from "react-helmet-async";
 
 const contactInfo = [
   {
@@ -92,127 +93,137 @@ const Contact = () => {
   };
 
   return (
-    <Layout>
-      {/* Hero */}
-      <section className="section-padding bg-secondary pt-12 md:pt-24">
-        <div className="container-narrow mx-auto text-center">
-          <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4">Get In Touch</h1>
-            <p className="text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-              Ready to gain clarity and build with intention? Let's start a conversation about your goals and how I can help you move forward.
-            </p>
-          </motion.div>
-        </div>
-      </section>
+    <>
+      <Helmet>
+        <title>Contact Jude Iria | Business Consultant & Career Coach</title>
+        <meta
+          name="description"
+          content="Get in touch with Jude Iria for business consulting, career coaching, and branding services. Book a call or send a message to start your journey towards clarity and growth."
+        />
+      </Helmet>
 
-      {/* Contact Form & Info */}
-      <Section className="px-4 md:px-12 py-12 bg-background">
-        <div className="container-wide mx-auto">
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-20">
-            {/* Contact Form */}
-            <motion.div initial={{ opacity: 0, x: -50 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.8 }}>
-              <Card className="border-border">
-                <CardHeader>
-                  <CardTitle className="font-heading text-2xl  text-white">Send a Message</CardTitle>
-                  <p className=" text-white">Fill out the form below and I'll get back to you within 24 hours.</p>
-                </CardHeader>
-                <CardContent className="space-y-6">
-                  <form ref={formRef} onSubmit={handleSubmit} className="space-y-6">
-                    <div className="grid sm:grid-cols-2 gap-4">
-                      <div className="space-y-2">
-                        <Label htmlFor="firstName">First Name</Label>
-                        <Input id="firstName" name="firstName" placeholder="John" required />
-                      </div>
-                      <div className="space-y-2">
-                        <Label htmlFor="lastName">Last Name</Label>
-                        <Input id="lastName" name="lastName" placeholder="Doe" required />
-                      </div>
-                    </div>
-                    <div className="space-y-2">
-                      <Label htmlFor="email">Email</Label>
-                      <Input id="email" name="email" type="email" placeholder="john@example.com" required />
-                    </div>
-                    <div className="space-y-2">
-                      <Label htmlFor="subject">Subject</Label>
-                      <Input id="subject" name="subject" placeholder="How can I help you?" required />
-                    </div>
-                    <div className="space-y-2">
-                      <Label htmlFor="message">Message</Label>
-                      <Textarea
-                        id="message"
-                        name="message"
-                        placeholder="Tell me about your goals, challenges, or what you're looking to achieve..."
-                        rows={6}
-                        required
-                      />
-                    </div>
-                    <Button type="submit" className="w-full group" size="lg" disabled={isSubmitting}>
-                      {isSubmitting ? "Sending..." : "Send Message"}
-                      <Send className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                    </Button>
-                  </form>
-                </CardContent>
-              </Card>
-            </motion.div>
-
-            {/* Contact Info */}
-            <motion.div
-              initial={{ opacity: 0, x: 50 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              className="space-y-8"
-            >
-              <div>
-                <h2 className="font-heading text-3xl font-bold  text-white mb-3">Contact Information</h2>
-                <p className=" text-white leading-relaxed">Prefer to reach out directly? Here are the best ways to connect with me.</p>
-              </div>
-
-              <div className="grid sm:grid-cols-2 gap-6">
-                {contactInfo.map((info, i) => (
-                  <Card key={i} className="border-border hover:shadow-md transition-shadow">
-                    <CardContent className="p-6">
-                      <div className="flex items-start gap-4">
-                        <div className="p-2 bg-accent/10 rounded-lg">
-                          <info.icon className="w-6 h-6 text-accent" />
-                        </div>
-                        <div>
-                          <h3 className="font-semibold  text-white mb-1">{info.title}</h3>
-                          <a href={info.link} className=" text-white hover:text-accent transition-colors">
-                            {info.details}
-                          </a>
-                        </div>
-                      </div>
-                    </CardContent>
-                  </Card>
-                ))}
-              </div>
-
-              <div className="bg-secondary p-6 rounded-lg">
-                <h3 className="font-heading text-xl font-semibold  text-white mb-4">Quick Response Guarantee</h3>
-                <p className=" text-white leading-relaxed">
-                  I respond to all inquiries within 24 hours during business days. For urgent matters, feel free to call directly.
-                </p>
-              </div>
+      <Layout>
+        {/* Hero */}
+        <section className="section-padding bg-secondary pt-12 md:pt-24">
+          <div className="container-narrow mx-auto text-center">
+            <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
+              <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4">Get In Touch</h1>
+              <p className="text-muted-foreground max-w-2xl mx-auto leading-relaxed">
+                Ready to gain clarity and build with intention? Let's start a conversation about your goals and how I can help you move forward.
+              </p>
             </motion.div>
           </div>
-        </div>
-      </Section>
+        </section>
 
-      {/* CTA */}
-      <section className="py-10 px-4 max-w-6xl m-4 rounded-xl md:m-auto bg-background relative overflow-hidden">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] bg-primary/10 rounded-full blur-[100px] pointer-events-none" />
-        <div className="container-narrow mx-auto text-center relative z-10">
-          <h2 className="text-xl md:text-2xl font-bold text-foreground mb-3">Prefer to talk directly?</h2>
-          <p className="text-sm text-muted-foreground mb-6">Book a clarity session and let's figure out your next step together.</p>
-          <Button variant="hero" size="lg" asChild className="group">
-            <a href="https://calendly.com/judeiria/business_consultation" target="_blank" rel="noopener noreferrer">
-              Book a Call
-              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-            </a>
-          </Button>
-        </div>
-      </section>
-    </Layout>
+        {/* Contact Form & Info */}
+        <Section className="px-4 md:px-12 py-12 bg-background">
+          <div className="container-wide mx-auto">
+            <div className="grid lg:grid-cols-2 gap-12 lg:gap-20">
+              {/* Contact Form */}
+              <motion.div initial={{ opacity: 0, x: -50 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.8 }}>
+                <Card className="border-border">
+                  <CardHeader>
+                    <CardTitle className="font-heading text-2xl  text-white">Send a Message</CardTitle>
+                    <p className=" text-white">Fill out the form below and I'll get back to you within 24 hours.</p>
+                  </CardHeader>
+                  <CardContent className="space-y-6">
+                    <form ref={formRef} onSubmit={handleSubmit} className="space-y-6">
+                      <div className="grid sm:grid-cols-2 gap-4">
+                        <div className="space-y-2">
+                          <Label htmlFor="firstName">First Name</Label>
+                          <Input id="firstName" name="firstName" placeholder="John" required />
+                        </div>
+                        <div className="space-y-2">
+                          <Label htmlFor="lastName">Last Name</Label>
+                          <Input id="lastName" name="lastName" placeholder="Doe" required />
+                        </div>
+                      </div>
+                      <div className="space-y-2">
+                        <Label htmlFor="email">Email</Label>
+                        <Input id="email" name="email" type="email" placeholder="john@example.com" required />
+                      </div>
+                      <div className="space-y-2">
+                        <Label htmlFor="subject">Subject</Label>
+                        <Input id="subject" name="subject" placeholder="How can I help you?" required />
+                      </div>
+                      <div className="space-y-2">
+                        <Label htmlFor="message">Message</Label>
+                        <Textarea
+                          id="message"
+                          name="message"
+                          placeholder="Tell me about your goals, challenges, or what you're looking to achieve..."
+                          rows={6}
+                          required
+                        />
+                      </div>
+                      <Button type="submit" className="w-full group" size="lg" disabled={isSubmitting}>
+                        {isSubmitting ? "Sending..." : "Send Message"}
+                        <Send className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                      </Button>
+                    </form>
+                  </CardContent>
+                </Card>
+              </motion.div>
+
+              {/* Contact Info */}
+              <motion.div
+                initial={{ opacity: 0, x: 50 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.8, delay: 0.2 }}
+                className="space-y-8"
+              >
+                <div>
+                  <h2 className="font-heading text-3xl font-bold  text-white mb-3">Contact Information</h2>
+                  <p className=" text-white leading-relaxed">Prefer to reach out directly? Here are the best ways to connect with me.</p>
+                </div>
+
+                <div className="grid sm:grid-cols-2 gap-6">
+                  {contactInfo.map((info, i) => (
+                    <Card key={i} className="border-border hover:shadow-md transition-shadow">
+                      <CardContent className="p-6">
+                        <div className="flex items-start gap-4">
+                          <div className="p-2 bg-accent/10 rounded-lg">
+                            <info.icon className="w-6 h-6 text-accent" />
+                          </div>
+                          <div>
+                            <h3 className="font-semibold  text-white mb-1">{info.title}</h3>
+                            <a href={info.link} className=" text-white hover:text-accent transition-colors">
+                              {info.details}
+                            </a>
+                          </div>
+                        </div>
+                      </CardContent>
+                    </Card>
+                  ))}
+                </div>
+
+                <div className="bg-secondary p-6 rounded-lg">
+                  <h3 className="font-heading text-xl font-semibold  text-white mb-4">Quick Response Guarantee</h3>
+                  <p className=" text-white leading-relaxed">
+                    I respond to all inquiries within 24 hours during business days. For urgent matters, feel free to call directly.
+                  </p>
+                </div>
+              </motion.div>
+            </div>
+          </div>
+        </Section>
+
+        {/* CTA */}
+        <section className="py-10 px-4 max-w-6xl m-4 rounded-xl md:m-auto bg-background relative overflow-hidden">
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] bg-primary/10 rounded-full blur-[100px] pointer-events-none" />
+          <div className="container-narrow mx-auto text-center relative z-10">
+            <h2 className="text-xl md:text-2xl font-bold text-foreground mb-3">Prefer to talk directly?</h2>
+            <p className="text-sm text-muted-foreground mb-6">Book a clarity session and let's figure out your next step together.</p>
+            <Button variant="hero" size="lg" asChild className="group">
+              <a href="https://calendly.com/judeiria/business_consultation" target="_blank" rel="noopener noreferrer">
+                Book a Call
+                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              </a>
+            </Button>
+          </div>
+        </section>
+      </Layout>
+    </>
   );
 };
 

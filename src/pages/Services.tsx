@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet-async";
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { Layout } from "@/components/layout/Layout";
@@ -136,67 +137,77 @@ const Services = () => {
   const heroInView = useInView(heroRef, { once: true, margin: "-100px" });
 
   return (
-    <Layout>
-      {/* Hero */}
-      <section ref={heroRef} className="section-padding bg-secondary pt-12 md:pt-24">
-        <div className="container-narrow mx-auto text-center">
-          <motion.h1
-            initial={{ opacity: 0, y: 20 }}
-            animate={heroInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.5 }}
-            className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4"
-          >
-            Build clarity that moves you forward.
-          </motion.h1>
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={heroInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.5, delay: 0.1 }}
-            className="text-muted-foreground max-w-2xl mx-auto md:text-lg text-base leading-relaxed"
-          >
-            Whether you're starting something new or refining what you've built, I help you focus on what matters and move with intention.
-          </motion.p>
-          <motion.p
-            initial={{ opacity: 0 }}
-            animate={heroInView ? { opacity: 1 } : {}}
-            transition={{ duration: 0.5, delay: 0.2 }}
-            className="text-primary font-semibold text-sm mt-4"
-          >
-            No noise. No guesswork. Just clear thinking.
-          </motion.p>
-        </div>
-      </section>
+    <>
+      <Helmet>
+        <title>Business Consulting, Career Coaching & Branding Services | Jude Iria</title>
+        <meta
+          name="description"
+          content="Professional business consulting, career coaching, and branding services by Jude Iria to help you gain clarity, position your skills, and grow strategically."
+        />
+      </Helmet>
 
-      {/* Services */}
-      {services.map((service, i) => (
-        <ServiceSection key={service.id} {...service} reverse={service.reverse} />
-      ))}
+      <Layout>
+        {/* Hero */}
+        <section ref={heroRef} className="section-padding bg-secondary pt-12 md:pt-24">
+          <div className="container-narrow mx-auto text-center">
+            <motion.h1
+              initial={{ opacity: 0, y: 20 }}
+              animate={heroInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.5 }}
+              className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4"
+            >
+              Build clarity that moves you forward.
+            </motion.h1>
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={heroInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.5, delay: 0.1 }}
+              className="text-muted-foreground max-w-2xl mx-auto md:text-lg text-base leading-relaxed"
+            >
+              Whether you're starting something new or refining what you've built, I help you focus on what matters and move with intention.
+            </motion.p>
+            <motion.p
+              initial={{ opacity: 0 }}
+              animate={heroInView ? { opacity: 1 } : {}}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              className="text-primary font-semibold text-sm mt-4"
+            >
+              No noise. No guesswork. Just clear thinking.
+            </motion.p>
+          </div>
+        </section>
 
-      {/* Not Sure CTA */}
-      <section className="py-10 px-4 max-w-6xl m-4 rounded-xl md:m-auto bg-background relative overflow-hidden">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] bg-primary/10 rounded-full blur-[100px] pointer-events-none" />
-        <div className="container-narrow mx-auto text-center relative z-10">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.5 }}
-          >
-            <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-4">Not Sure What You Need Yet?</h2>
-            <p className="text-muted-foreground mb-6 max-w-xl mx-auto text-sm">
-              That's completely normal. Most people don't come in knowing what they need,they just know something feels off. We'll figure it out
-              together.
-            </p>
-            <Button variant="hero" size="lg" asChild className="group">
-              <a href="https://calendly.com/judeiria/business_consultation" target="_blank" rel="noopener noreferrer">
-                Book a Call
-                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-              </a>
-            </Button>
-          </motion.div>
-        </div>
-      </section>
-    </Layout>
+        {/* Services */}
+        {services.map((service, i) => (
+          <ServiceSection key={service.id} {...service} reverse={service.reverse} />
+        ))}
+
+        {/* Not Sure CTA */}
+        <section className="py-10 px-4 max-w-6xl m-4 rounded-xl md:m-auto bg-background relative overflow-hidden">
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] bg-primary/10 rounded-full blur-[100px] pointer-events-none" />
+          <div className="container-narrow mx-auto text-center relative z-10">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.5 }}
+            >
+              <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-4">Not Sure What You Need Yet?</h2>
+              <p className="text-muted-foreground mb-6 max-w-xl mx-auto text-sm">
+                That's completely normal. Most people don't come in knowing what they need,they just know something feels off. We'll figure it out
+                together.
+              </p>
+              <Button variant="hero" size="lg" asChild className="group">
+                <a href="https://calendly.com/judeiria/business_consultation" target="_blank" rel="noopener noreferrer">
+                  Book a Call
+                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                </a>
+              </Button>
+            </motion.div>
+          </div>
+        </section>
+      </Layout>
+    </>
   );
 };
 

@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet-async";
 import { Layout } from "@/components/layout/Layout";
 import { HeroSection } from "@/components/home/HeroSection";
 import { AboutSection } from "@/components/home/AboutSection";
@@ -9,15 +10,25 @@ import { CTASection } from "@/components/home/CTASection";
 
 const Index = () => {
   return (
-    <Layout>
-      <HeroSection />
-      <AboutSection />
-      <ServicesSection />
-      <WhySection />
-      <StatsSection />
-      <TestimonialsSection />
-      <CTASection />
-    </Layout>
+    <>
+      <Helmet>
+        <title>Jude Iria – Business Consultant, Career Coach & Brand Strategist</title>
+        <meta
+          name="description"
+          content="Jude Iria is a business consultant, career coach, and brand strategist helping individuals and founders gain clarity, build skills, and create sustainable income."
+        />
+      </Helmet>
+
+      <Layout>
+        <HeroSection />
+        <AboutSection />
+        <ServicesSection />
+        <WhySection />
+        <StatsSection />
+        <TestimonialsSection />
+        <CTASection />
+      </Layout>
+    </>
   );
 };
 
