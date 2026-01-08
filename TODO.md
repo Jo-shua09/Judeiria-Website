@@ -1,6 +1,0 @@
-- [x] Update import in src/main.tsx for HelmetProvider
-- [x] Update import in src/pages/Services.tsx for Helmet
-- [x] Update import in src/pages/About.tsx for Helmet
-- [x] Update import in src/pages/Index.tsx for Helmet
-- [x] Update import in src/pages/Contact.tsx for Helmet
-- [x] Run build to verify the fix

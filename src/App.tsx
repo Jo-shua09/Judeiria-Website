@@ -6,9 +6,12 @@ export default function App() {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    const timer = setTimeout(() => setIsLoading(false), 3000);
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 3000); // Show loader for 3 seconds
+
     return () => clearTimeout(timer);
   }, []);
 
-  return <>{isLoading ? <Loader /> : <AppRouter />}</>;
+  return <div>{isLoading ? <Loader /> : <AppRouter />}</div>;
 }
