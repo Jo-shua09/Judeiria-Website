@@ -150,7 +150,7 @@ const About = () => {
                   loading="lazy"
                   src={judeAbout}
                   alt="Jude Iria"
-                  className="relative rounded-2xl shadow-2xl w-full max-w-md mx-auto lg:max-w-none object-cover aspect-[4/5] md:aspect-[1/1]"
+                  className="relative rounded-2xl shadow-2xl w-full max-w-md mx-auto lg:max-w-none object-cover object-top aspect-[4/5] md:aspect-[1/1]"
                 />
               </motion.div>
             </div>
