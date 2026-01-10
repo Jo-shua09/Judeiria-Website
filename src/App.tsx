@@ -8,7 +8,7 @@ export default function App() {
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsLoading(false);
-    }, 3000); // Show loader for 3 seconds
+    }, 2000); // Show loader for 3 seconds
 
     return () => clearTimeout(timer);
   }, []);
